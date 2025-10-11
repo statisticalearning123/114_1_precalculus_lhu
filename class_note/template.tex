@@ -1,0 +1,173 @@
+% LaTeX Template for Teaching Notes
+% 龍華科技大學 - 基礎數學教學筆記 PDF 模板
+
+\documentclass[$if(fontsize)$$fontsize$,$endif$$if(lang)$$babel-lang$,$endif$$if(papersize)$$papersize$paper,$endif$$for(classoption)$$classoption$$sep$,$endfor$]{$documentclass$}
+
+% 套件載入
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e}
+
+% 使用 XeLaTeX 處理中文
+\ifxetex
+  \usepackage{fontspec}
+  \usepackage{xeCJK}
+  \setCJKmainfont{$if(CJKmainfont)$$CJKmainfont$$else$PingFang TC$endif$}
+  \setmainfont{$if(mainfont)$$mainfont$$else$PingFang TC$endif$}
+  \setCJKsansfont{PingFang TC}
+  \setCJKmonofont{PingFang TC}
+\fi
+
+% 頁面設定
+\usepackage[$for(geometry)$$geometry$$sep$,$endfor$]{geometry}
+
+% 顏色
+\usepackage[dvipsnames]{xcolor}
+\definecolor{titlecolor}{RGB}{0,51,102}
+\definecolor{sectioncolor}{RGB}{51,51,51}
+\definecolor{linkcolor}{RGB}{0,102,204}
+
+% 超連結
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=$if(linkcolor)$$linkcolor$$else$linkcolor$endif$,
+  urlcolor=$if(urlcolor)$$urlcolor$$else$linkcolor$endif$,
+  breaklinks=true,
+  pdfborder={0 0 0}
+}
+
+% 數學符號
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{mathtools}
+
+% 圖片
+\usepackage{graphicx}
+\usepackage{grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+
+% 表格
+\usepackage{longtable,booktabs}
+\usepackage{array}
+\usepackage{multirow}
+
+% 列表
+\usepackage{enumitem}
+\setlist{nosep}
+
+% Pandoc 相容性
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+% 程式碼區塊
+\usepackage{fancyvrb}
+\usepackage{listings}
+\lstset{
+  basicstyle=\ttfamily\small,
+  breaklines=true,
+  frame=single,
+  backgroundcolor=\color{gray!10}
+}
+
+% 引用區塊樣式
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\renewenvironment{quote}{\begin{shaded}}{\end{shaded}}
+
+% 頁首頁尾
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\textcolor{gray}{龍華科技大學 - 基礎數學}}
+\fancyhead[R]{\small\textcolor{gray}{$if(date)$$date$$else$\today$endif$}}
+\fancyfoot[C]{\small\textcolor{gray}{\thepage}}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% 標題樣式
+\usepackage{titlesec}
+
+% 第一層標題（大標題）
+\titleformat{\section}
+  {\LARGE\bfseries\color{titlecolor}}
+  {\thesection}{1em}{}
+  [\vspace{-0.5em}\textcolor{titlecolor}{\titlerule[1.5pt]}]
+\titlespacing*{\section}{0pt}{1.5em}{1em}
+
+% 第二層標題
+\titleformat{\subsection}
+  {\Large\bfseries\color{sectioncolor}}
+  {\thesubsection}{1em}{}
+\titlespacing*{\subsection}{0pt}{1.2em}{0.8em}
+
+% 第三層標題
+\titleformat{\subsubsection}
+  {\large\bfseries\color{sectioncolor}}
+  {\thesubsubsection}{1em}{}
+\titlespacing*{\subsubsection}{0pt}{1em}{0.6em}
+
+% 段落間距
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.8em}
+
+% 行距
+\usepackage{setspace}
+\setstretch{1.3}
+
+% 自訂命令
+\newcommand{\icon}[1]{\textcolor{titlecolor}{\textbf{#1}}}
+
+% 文檔開始
+\begin{document}
+
+% 標題頁
+$if(title)$
+\begin{titlepage}
+\centering
+\vspace*{3cm}
+
+{\Huge\bfseries\color{titlecolor}$title$\par}
+
+\vspace{1.5cm}
+
+$if(subtitle)$
+{\Large\color{sectioncolor}$subtitle$\par}
+\vspace{1cm}
+$endif$
+
+$if(author)$
+{\large 講師：$author$\par}
+$endif$
+
+$if(date)$
+{\large $date$\par}
+$endif$
+
+\vfill
+
+{\large 龍華科技大學 114 學年度第 1 學期\par}
+{\large 課程：基礎數學\par}
+
+\vspace{2cm}
+
+\end{titlepage}
+$endif$
+
+% 目錄
+$if(toc)$
+{
+\hypersetup{linkcolor=black}
+\setcounter{tocdepth}{$toc-depth$}
+\tableofcontents
+\newpage
+}
+$endif$
+
+% 內文
+$body$
+
+% 文檔結束
+\end{document}

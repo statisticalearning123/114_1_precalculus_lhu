@@ -1,0 +1,181 @@
+---
+title: "有用連結"
+subtitle: "線上學習資源"
+date: today
+format:
+  html:
+    toc: true
+---
+
+## 線上課程與影片
+
+### 中文資源
+
+- [均一教育平台](https://www.junyiacademy.org/)
+  - 完整的數學課程，含影片和練習題
+  - 適合打基礎和複習
+
+- [翰林雲端學院](https://www.ehanlin.com.tw/)
+  - 教科書配套教學影片
+
+- [台大開放式課程](https://ocw.aca.ntu.edu.tw/)
+  - 大學數學相關課程
+
+### 英文資源
+
+- [Khan Academy](https://www.khanacademy.org/math/precalculus)
+  - 世界級的免費線上數學課程
+  - 包含影片、練習題和測驗
+  - **強力推薦**
+
+- [3Blue1Brown](https://www.youtube.com/c/3blue1brown)
+  - 視覺化數學概念
+  - 幫助深入理解數學本質
+
+- [Professor Leonard](https://www.youtube.com/c/ProfessorLeonard)
+  - 完整的預備微積分課程
+  - 講解詳細清楚
+
+## 互動式工具
+
+### 圖形計算機
+
+- [Desmos](https://www.desmos.com/calculator)
+  - 最推薦的線上圖形計算機
+  - 功能強大且易用
+  - 可以儲存和分享圖形
+
+- [GeoGebra](https://www.geogebra.org/)
+  - 動態數學軟體
+  - 適合探索幾何和函數
+
+### 符號計算
+
+- [Wolfram Alpha](https://www.wolframalpha.com/)
+  - 強大的計算引擎
+  - 可以一步步顯示解題過程
+  - **建議付費版以獲得完整步驟**
+
+- [Symbolab](https://www.symbolab.com/)
+  - 方程式求解器
+  - 提供詳細解題步驟
+
+## 練習題庫
+
+- [Khan Academy Practice](https://www.khanacademy.org/)
+  - 自適應練習系統
+  - 根據你的程度調整題目
+
+- [IXL Math](https://www.ixl.com/math/)
+  - 大量練習題
+  - 即時回饋
+
+- [Brilliant.org](https://brilliant.org/)
+  - 問題導向學習
+  - 培養數學思維
+
+## 參考書籍
+
+### 教科書
+
+1. **Precalculus** by James Stewart, et al.
+   - 經典教科書
+   - 內容完整嚴謹
+
+2. **Precalculus: Mathematics for Calculus** by Stewart, Redlin, and Watson
+   - 著重應用和理解
+   - 豐富的例題
+
+### 補充讀物
+
+- **數學女孩系列** - 結城浩
+  - 用故事學數學
+  - 深入淺出
+
+## 學習社群
+
+### 論壇和問答
+
+- [Math Stack Exchange](https://math.stackexchange.com/)
+  - 數學問題討論區
+  - 可以搜尋或提問
+
+- [Reddit r/learnmath](https://www.reddit.com/r/learnmath/)
+  - 學習數學的社群
+  - 友善的學習環境
+
+### 學習小組
+
+建議與同學組成讀書會：
+
+- 定期聚會討論問題
+- 互相解釋概念
+- 共同準備考試
+
+## 實用 App
+
+### iOS/Android
+
+- **Photomath**
+  - 拍照解題
+  - 顯示解題步驟
+
+- **Wolfram Alpha**
+  - 手機版計算引擎
+
+- **Khan Academy App**
+  - 隨時隨地學習
+
+## 考試準備
+
+### 歷屆試題
+
+- [待補充：學校考古題資源]
+
+### 複習策略
+
+1. 製作公式卡片
+2. 整理錯題本
+3. 定期自我測驗
+4. 參加讀書會
+
+## 數學學習技巧
+
+### 推薦文章
+
+- [如何學好數學](https://example.com)
+- [數學學習方法](https://example.com)
+- [克服數學恐懼](https://example.com)
+
+### YouTube 頻道
+
+- **Numberphile** - 有趣的數學話題
+- **Mathologer** - 深入數學概念
+- **Eddie Woo** - 澳洲高中數學老師
+
+## 辦公軟體
+
+### LaTeX
+
+如果要寫數學報告或論文：
+
+- [Overleaf](https://www.overleaf.com/)
+  - 線上 LaTeX 編輯器
+  - 適合寫數學文件
+
+---
+
+::: {.callout-tip}
+## 學習建議
+
+不要只依賴這些工具來做作業！
+
+這些資源是用來：
+- **學習概念**
+- **檢查答案**
+- **理解解題過程**
+
+真正的學習來自於自己動手解題！
+:::
+
+*最後更新：`r Sys.Date()`*

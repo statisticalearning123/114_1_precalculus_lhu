@@ -1,0 +1,77 @@
+/* 自訂樣式 */
+
+/* 全域設定 */
+:root {
+  --primary-color: #2563eb;
+  --secondary-color: #7c3aed;
+  --accent-color: #059669;
+  --warning-color: #dc2626;
+}
+
+/* 標題樣式 */
+h1, h2, h3 {
+  color: var(--primary-color);
+}
+
+/* 連結樣式 */
+a {
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: var(--secondary-color);
+}
+
+/* Callout 區塊額外樣式 */
+.callout {
+  border-radius: 8px;
+  margin: 1.5rem 0;
+}
+
+/* 表格樣式 */
+table {
+  margin: 1.5rem 0;
+}
+
+thead {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+/* 程式碼區塊 */
+pre {
+  border-radius: 6px;
+  padding: 1rem;
+}
+
+/* 數學公式 */
+.math {
+  font-size: 1.1em;
+}
+
+/* 首頁特殊樣式 */
+.home-hero {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+/* 課程進度表 */
+.schedule-table {
+  font-size: 0.95em;
+}
+
+.schedule-table tr:hover {
+  background-color: #f3f4f6;
+}
+
+/* 回應式設計 */
+@media (max-width: 768px) {
+  table {
+    font-size: 0.85em;
+  }
+
+  .callout {
+    padding: 0.75rem;
+  }
+}

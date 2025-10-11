@@ -1,0 +1,120 @@
+/* 龍華科技大學 - 基礎數學課程網站樣式 */
+
+/* 主色系 - 龍華藍 */
+:root {
+  --longhwa-blue: #003366;
+  --longhwa-blue-light: #0066CC;
+  --longhwa-blue-dark: #002244;
+}
+
+/* 標題樣式 */
+h1, h2, h3 {
+  color: var(--longhwa-blue);
+}
+
+/* 連結顏色 */
+a {
+  color: var(--longhwa-blue);
+}
+
+a:hover {
+  color: var(--longhwa-blue-dark);
+}
+
+/* 表格樣式 */
+table {
+  margin: 1.5em 0;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+table th {
+  background-color: var(--longhwa-blue);
+  color: white;
+  padding: 0.75em;
+  text-align: left;
+}
+
+table td {
+  padding: 0.75em;
+  border-bottom: 1px solid #ddd;
+}
+
+table tr:hover {
+  background-color: #f5f5f5;
+}
+
+/* 程式碼區塊 */
+code {
+  background-color: #f4f4f4;
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+  font-family: 'Courier New', monospace;
+}
+
+pre code {
+  display: block;
+  padding: 1em;
+  overflow-x: auto;
+}
+
+/* Callout 區塊增強 */
+.callout {
+  margin: 1.5em 0;
+  padding: 1em;
+  border-left: 4px solid var(--longhwa-blue);
+}
+
+.callout-important {
+  border-left-color: var(--longhwa-blue);
+  background-color: #e6f2ff;
+}
+
+.callout-warning {
+  border-left-color: #ff9800;
+  background-color: #fff8e1;
+}
+
+.callout-note {
+  border-left-color: #2196f3;
+  background-color: #e3f2fd;
+}
+
+/* 按鈕樣式 */
+.btn-download {
+  display: inline-block;
+  padding: 0.5em 1em;
+  background-color: var(--longhwa-blue);
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.btn-download:hover {
+  background-color: var(--longhwa-blue-dark);
+  color: white;
+}
+
+/* 數學符號美化 */
+.math {
+  font-family: 'Times New Roman', serif;
+}
+
+/* 框框法視覺化 */
+.box-method {
+  border: 2px solid var(--longhwa-blue);
+  padding: 0.3em 0.6em;
+  display: inline-block;
+  margin: 0 0.2em;
+  background-color: #fff;
+}
+
+/* 頁尾樣式 */
+.page-footer {
+  margin-top: 3em;
+  padding-top: 1em;
+  border-top: 1px solid #ddd;
+  color: #666;
+  font-size: 0.9em;
+}

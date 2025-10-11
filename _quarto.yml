@@ -1,0 +1,46 @@
+project:
+  type: website
+  output-dir: _site
+  render:
+    - "*.qmd"
+    - "!docs/"
+    - "!materials.qmd"
+    - "!teaching-method.qmd"
+
+website:
+  title: "基礎數學"
+  navbar:
+    background: "#003366"  # 龍華藍
+    foreground: white
+    left:
+      - text: "課程大綱"
+        href: index.qmd
+      - text: "課程內容"
+        href: contents.qmd
+      - text: "作業與考試"
+        href: assignments.qmd
+
+  sidebar:
+    style: "floating"
+    contents:
+      - section: "課程資訊"
+        contents:
+          - index.qmd
+          - contents.qmd
+          - assignments.qmd
+
+  page-footer:
+    center: "龍華科技大學 114-1 基礎數學"
+
+format:
+  html:
+    theme:
+      light: [cosmo, custom.scss]
+    css: styles.css
+    toc: true
+    toc-depth: 3
+    number-sections: false
+    link-external-newwindow: true
+    smooth-scroll: true
+    code-copy: true
+    lang: zh-TW

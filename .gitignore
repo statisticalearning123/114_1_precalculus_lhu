@@ -1,0 +1,40 @@
+# Quarto 網站建置檔案
+_site/
+.quarto/
+*.html
+
+# 內部討論資料（不放到網站）
+docs/
+
+# R 相關
+.Rproj.user/
+.Rhistory
+.RData
+.Ruserdata
+
+# PDF 建置中間檔案
+*.aux
+*.log
+*.out
+*.toc
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# 編輯器
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# 其他
+*.bak
+*.tmp
+
+/.quarto/

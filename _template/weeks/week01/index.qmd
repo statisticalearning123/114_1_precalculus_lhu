@@ -1,0 +1,189 @@
+---
+title: "第一週：課程介紹與代數基礎"
+subtitle: "預備微積分"
+date: "MM/DD/2025"
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    code-fold: true
+---
+
+## 本週概覽
+
+歡迎來到預備微積分課程！本週我們將：
+
+- 介紹課程內容和要求
+- 複習實數系統
+- 回顧基本代數運算
+
+## 學習目標
+
+完成本週學習後，你應該能夠：
+
+1. 理解課程的結構和要求
+2. 掌握實數的分類和性質
+3. 熟練進行基本代數運算
+4. 理解指數律和根式運算
+
+## 課程內容
+
+### 1. 課程介紹
+
+#### 課程資訊
+
+- **課程目標**：建立微積分基礎
+- **評分方式**：作業20%、測驗20%、期中30%、期末30%
+- **學習資源**：教科書、課程網站、Office Hours
+
+#### 學習建議
+
+- 每週投入6-8小時
+- 按時完成作業
+- 主動發問
+- 參與讀書會
+
+### 2. 實數系統
+
+#### 實數的分類
+
+```{python}
+#| echo: true
+#| code-fold: false
+
+# 實數的分類示例
+import matplotlib.pyplot as plt
+import numpy as np
+
+# 創建數線
+fig, ax = plt.subplots(figsize=(10, 2))
+ax.plot([-5, 5], [0, 0], 'k-', linewidth=2)
+
+# 標記不同類型的數
+integers = [-3, -2, -1, 0, 1, 2, 3]
+rationals = [-2.5, -0.5, 1.5, 2.75]
+irrationals = [-np.pi, np.e]
+
+ax.plot(integers, [0]*len(integers), 'bo', markersize=8, label='整數')
+ax.plot(rationals, [0]*len(rationals), 'rs', markersize=8, label='有理數')
+ax.plot(irrationals, [0]*len(irrationals), 'g^', markersize=8, label='無理數')
+
+# 添加標籤
+for i in integers:
+    ax.text(i, -0.15, str(i), ha='center', fontsize=10)
+
+ax.set_xlim(-4, 4)
+ax.set_ylim(-0.5, 0.5)
+ax.set_yticks([])
+ax.legend(loc='upper right')
+ax.set_title('實數數線')
+plt.tight_layout()
+plt.show()
+```
+
+**實數的層次結構**：
+
+- **自然數** (N)：1, 2, 3, 4, ...
+- **整數** (Z)：..., -2, -1, 0, 1, 2, ...
+- **有理數** (Q)：可表示為 p/q 的數（p, q 為整數，q ≠ 0）
+- **無理數**：不能表示為分數的數（如 π, √2）
+- **實數** (R)：有理數 + 無理數
+
+#### 實數的性質
+
+| 性質 | 加法 | 乘法 |
+|------|------|------|
+| 交換律 | a + b = b + a | a × b = b × a |
+| 結合律 | (a + b) + c = a + (b + c) | (a × b) × c = a × (b × c) |
+| 分配律 | a(b + c) = ab + ac | - |
+| 單位元素 | a + 0 = a | a × 1 = a |
+| 反元素 | a + (-a) = 0 | a × (1/a) = 1 (a ≠ 0) |
+
+### 3. 代數運算
+
+#### 指數律
+
+對於任意實數 a, b 和整數 m, n：
+
+1. $a^m \cdot a^n = a^{m+n}$
+2. $(a^m)^n = a^{mn}$
+3. $(ab)^n = a^n b^n$
+4. $\frac{a^m}{a^n} = a^{m-n}$ (a ≠ 0)
+5. $a^{-n} = \frac{1}{a^n}$ (a ≠ 0)
+
+#### 範例
+
+::: {.callout-tip}
+## 範例 1：指數律應用
+
+化簡：$\frac{x^5 \cdot x^3}{x^4}$
+
+**解**：
+$$
+\begin{align}
+\frac{x^5 \cdot x^3}{x^4} &= \frac{x^{5+3}}{x^4} \\
+&= \frac{x^8}{x^4} \\
+&= x^{8-4} \\
+&= x^4
+\end{align}
+$$
+:::
+
+#### 根式運算
+
+- $\sqrt[n]{a^n} = |a|$ 當 n 為偶數
+- $\sqrt[n]{a^n} = a$ 當 n 為奇數
+- $\sqrt[n]{ab} = \sqrt[n]{a} \cdot \sqrt[n]{b}$
+- $\sqrt[n]{\frac{a}{b}} = \frac{\sqrt[n]{a}}{\sqrt[n]{b}}$ (b ≠ 0)
+
+## 課堂練習
+
+### 練習題
+
+1. 化簡：$2^3 \cdot 2^4$
+2. 化簡：$(x^2y^3)^4$
+3. 化簡：$\sqrt{18} + \sqrt{32}$
+4. 計算：$\frac{1}{2^{-3}}$
+
+::: {.callout-note collapse="true"}
+## 參考解答
+
+1. $2^3 \cdot 2^4 = 2^7 = 128$
+2. $(x^2y^3)^4 = x^8y^{12}$
+3. $\sqrt{18} + \sqrt{32} = 3\sqrt{2} + 4\sqrt{2} = 7\sqrt{2}$
+4. $\frac{1}{2^{-3}} = 2^3 = 8$
+:::
+
+## 課後作業
+
+本週沒有正式作業，但建議：
+
+- 複習實數性質
+- 練習指數律
+- 預習下週內容（方程式）
+
+## 補充資源
+
+### 推薦影片
+
+- [Khan Academy: 指數律](https://www.khanacademy.org/math/algebra/x2f8bb11595b61c86:exponents-radicals)
+- [3Blue1Brown: 數學的本質](https://www.youtube.com/c/3blue1brown)
+
+### 線上工具
+
+- [Desmos 計算機](https://www.desmos.com/calculator)
+- [Wolfram Alpha](https://www.wolframalpha.com/)
+
+## 下週預告
+
+下週我們將學習：
+
+- 線性方程式
+- 一元二次方程式
+- 不等式
+
+請預習教科書第2章！
+
+---
+
+*最後更新：`r Sys.Date()`*
