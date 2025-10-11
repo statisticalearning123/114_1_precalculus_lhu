@@ -11,8 +11,8 @@ id = '0199d0dd-b311-65ff-f795-416b2282d7fa'
 dashboard_url = 'https://connect.posit.cloud/statisticalearning123/content/0199d0dd-b311-65ff-f795-416b2282d7fa'
 direct_url = 'https://0199d0dd-b311-65ff-f795-416b2282d7fa.share.connect.posit.cloud'
 logs_url = 'https://connect.posit.cloud/statisticalearning123/content/0199d0dd-b311-65ff-f795-416b2282d7fa/history'
-deployed_at = '2025-10-11T09:43:36+08:00'
-bundle_id = '0199d0ef-ddaa-82de-880d-4b0d088a5d3b'
+deployed_at = '2025-10-11T10:02:34+08:00'
+bundle_id = '0199d101-4323-539d-ae1b-e38a271d37dd'
 files = [
   '.posit/publish/114_1_precalculus_lhu-CH44.toml',
   '.posit/publish/deployments/deployment-5FGS.toml',
@@ -23,7 +23,7 @@ files = [
   'class_note/draft/筆記 2025-10-02 18_52_50.pdf',
   'class_note/draft/筆記_2025-10-02_markdown版.md',
   'class_note/pdf_convert.sh',
-  'class_note/pdf_output/筆記_2025-10-02_markdown版.pdf',
+  'class_note/pdf_output/2025-10-02_基礎數學_課程筆記.pdf',
   'class_note/template.tex',
   'class_note/使用說明.md',
   'contents.qmd',
