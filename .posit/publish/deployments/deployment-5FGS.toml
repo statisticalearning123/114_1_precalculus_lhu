@@ -11,8 +11,8 @@ id = '0199d0dd-b311-65ff-f795-416b2282d7fa'
 dashboard_url = 'https://connect.posit.cloud/statisticalearning123/content/0199d0dd-b311-65ff-f795-416b2282d7fa'
 direct_url = 'https://0199d0dd-b311-65ff-f795-416b2282d7fa.share.connect.posit.cloud'
 logs_url = 'https://connect.posit.cloud/statisticalearning123/content/0199d0dd-b311-65ff-f795-416b2282d7fa/history'
-deployed_at = '2025-10-11T10:02:34+08:00'
-bundle_id = '0199d101-4323-539d-ae1b-e38a271d37dd'
+deployed_at = '2025-10-11T10:04:55+08:00'
+bundle_id = '0199d103-7c49-2b4d-063f-f496fc3fa63b'
 files = [
   '.posit/publish/114_1_precalculus_lhu-CH44.toml',
   '.posit/publish/deployments/deployment-5FGS.toml',
