@@ -5,6 +5,14 @@
 
 龍華科技大學 114 學年度第 1 學期基礎數學課程網站
 
+## 🌐 課程網站
+
+**線上課程網站**：https://statisticalearning123-114-1-precalculus-lhu.share.connect.posit.cloud
+
+本課程網站搭配 **TronClass** 教學平台使用：
+- **課程網站**：提供課程進度、教材下載、作業說明
+- **TronClass**：作業繳交、測驗作答、成績查詢
+
 ## 📚 課程資訊
 
 - **課程名稱**：基礎數學
