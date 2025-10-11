@@ -14,6 +14,7 @@ files = [
   '/styles.css',
   '/_quarto.yml',
   '/.posit/publish/114_1_precalculus_lhu-CH44.toml',
-  '/.posit/publish/deployments/deployment-5FGS.toml'
+  '/.posit/publish/deployments/deployment-5FGS.toml',
+  '/class_note'
 ]
 title = '114_1_precalculus_lhu'

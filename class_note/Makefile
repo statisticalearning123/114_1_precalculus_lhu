@@ -5,10 +5,10 @@
 PDF_DIR = pdf_output
 TEMPLATE = template.tex
 DRAFT_DIR = draft
+COURSE_NAME = 基礎數學
 
 # 尋找所有 markdown 檔案（筆記_*.md 格式）
 MD_FILES = $(wildcard 筆記_*.md) $(wildcard $(DRAFT_DIR)/筆記_*.md)
-PDF_FILES = $(patsubst %.md,$(PDF_DIR)/%.pdf,$(notdir $(MD_FILES)))
 
 # 顏色設定（終端機輸出）
 GREEN = \033[0;32m
@@ -18,7 +18,11 @@ NC = \033[0m # No Color
 
 # 預設目標：生成所有 PDF
 .PHONY: all
-all: $(PDF_DIR) $(PDF_FILES)
+all: $(PDF_DIR)
+	@echo "$(BLUE)開始轉換所有筆記...$(NC)"
+	@for mdfile in $(MD_FILES); do \
+		$(MAKE) convert-single MD_FILE=$$mdfile; \
+	done
 	@echo "$(GREEN)✓ 所有 PDF 已生成完畢！$(NC)"
 	@echo "$(BLUE)輸出位置: $(PDF_DIR)/$(NC)"
 
@@ -27,13 +31,23 @@ $(PDF_DIR):
 	@mkdir -p $(PDF_DIR)
 	@echo "$(GREEN)✓ 建立輸出資料夾: $(PDF_DIR)$(NC)"
 
-# 生成 PDF 的規則（從當前目錄的 md 檔）
-$(PDF_DIR)/%.pdf: %.md $(TEMPLATE) | $(PDF_DIR)
-	@echo "$(BLUE)正在轉換: $< → $@$(NC)"
-	@CLASS_DATE=$$(echo "$<" | sed -n 's/.*筆記_\([0-9]\{4\}-[0-9]\{2\}-[0-9]\{2\}\)_.*/\1/p'); \
+# 轉換單一檔案（內部使用）
+.PHONY: convert-single
+convert-single:
+	@if [ -z "$(MD_FILE)" ]; then \
+		echo "$(YELLOW)錯誤: 需要指定 MD_FILE$(NC)"; \
+		exit 1; \
+	fi
+	@BASENAME=$$(basename "$(MD_FILE)"); \
+	CLASS_DATE=$$(echo "$$BASENAME" | sed -n 's/筆記_\([0-9]\{4\}-[0-9]\{2\}-[0-9]\{2\}\)_.*/\1/p'); \
 	if [ -n "$$CLASS_DATE" ]; then \
-		echo "$(BLUE)上課日期: $$CLASS_DATE$(NC)"; \
-		pandoc $< \
+		OUTPUT_NAME="$${CLASS_DATE}_$(COURSE_NAME)_課程筆記.pdf"; \
+		OUTPUT_PATH="$(PDF_DIR)/$$OUTPUT_NAME"; \
+		echo "$(BLUE)正在轉換: $(MD_FILE)$(NC)"; \
+		echo "$(BLUE)  日期: $$CLASS_DATE$(NC)"; \
+		echo "$(BLUE)  課程: $(COURSE_NAME)$(NC)"; \
+		echo "$(BLUE)  輸出: $$OUTPUT_NAME$(NC)"; \
+		pandoc "$(MD_FILE)" \
 			--pdf-engine=xelatex \
 			--template=$(TEMPLATE) \
 			-V CJKmainfont="PingFang TC" \
@@ -45,57 +59,11 @@ $(PDF_DIR)/%.pdf: %.md $(TEMPLATE) | $(PDF_DIR)
 			-V colorlinks=true \
 			-V linkcolor=blue \
 			-V urlcolor=blue \
-			-o $@ 2>&1 | grep -v "Missing character" || true; \
+			-o "$$OUTPUT_PATH" 2>&1 | grep -v "Missing character" || true; \
+		echo "$(GREEN)✓ 完成: $$OUTPUT_NAME$(NC)"; \
 	else \
-		pandoc $< \
-			--pdf-engine=xelatex \
-			--template=$(TEMPLATE) \
-			-V CJKmainfont="PingFang TC" \
-			-V mainfont="PingFang TC" \
-			-V geometry:margin=2.5cm \
-			-V documentclass=article \
-			-V fontsize=12pt \
-			-V colorlinks=true \
-			-V linkcolor=blue \
-			-V urlcolor=blue \
-			-o $@ 2>&1 | grep -v "Missing character" || true; \
+		echo "$(YELLOW)⚠ 跳過: $(MD_FILE) (檔名格式不符)$(NC)"; \
 	fi
-	@echo "$(GREEN)✓ 完成: $@$(NC)"
-
-# 生成 PDF 的規則（從 draft 目錄的 md 檔）
-$(PDF_DIR)/%.pdf: $(DRAFT_DIR)/%.md $(TEMPLATE) | $(PDF_DIR)
-	@echo "$(BLUE)正在轉換: $< → $@$(NC)"
-	@CLASS_DATE=$$(echo "$<" | sed -n 's/.*筆記_\([0-9]\{4\}-[0-9]\{2\}-[0-9]\{2\}\)_.*/\1/p'); \
-	if [ -n "$$CLASS_DATE" ]; then \
-		echo "$(BLUE)上課日期: $$CLASS_DATE$(NC)"; \
-		pandoc $< \
-			--pdf-engine=xelatex \
-			--template=$(TEMPLATE) \
-			-V CJKmainfont="PingFang TC" \
-			-V mainfont="PingFang TC" \
-			-V date="$$CLASS_DATE" \
-			-V geometry:margin=2.5cm \
-			-V documentclass=article \
-			-V fontsize=12pt \
-			-V colorlinks=true \
-			-V linkcolor=blue \
-			-V urlcolor=blue \
-			-o $@ 2>&1 | grep -v "Missing character" || true; \
-	else \
-		pandoc $< \
-			--pdf-engine=xelatex \
-			--template=$(TEMPLATE) \
-			-V CJKmainfont="PingFang TC" \
-			-V mainfont="PingFang TC" \
-			-V geometry:margin=2.5cm \
-			-V documentclass=article \
-			-V fontsize=12pt \
-			-V colorlinks=true \
-			-V linkcolor=blue \
-			-V urlcolor=blue \
-			-o $@ 2>&1 | grep -v "Missing character" || true; \
-	fi
-	@echo "$(GREEN)✓ 完成: $@$(NC)"
 
 # 只生成特定日期的 PDF（強制更新）
 .PHONY: pdf
@@ -112,9 +80,9 @@ pdf:
 		echo "$(YELLOW)找不到檔案: 筆記_$(DATE)_*.md$(NC)"; \
 		exit 1; \
 	fi; \
-	basename=$$(basename $$file .md); \
-	rm -f $(PDF_DIR)/$$basename.pdf; \
-	$(MAKE) $(PDF_DIR)/$$basename.pdf
+	OUTPUT_NAME="$(DATE)_$(COURSE_NAME)_課程筆記.pdf"; \
+	rm -f "$(PDF_DIR)/$$OUTPUT_NAME"; \
+	$(MAKE) convert-single MD_FILE="$$file"
 
 # 清除所有生成的 PDF
 .PHONY: clean
