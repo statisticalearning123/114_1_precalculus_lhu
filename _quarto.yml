@@ -13,11 +13,9 @@ website:
     background: "#003366"  # 龍華藍
     foreground: white
     left:
-      - text: "課程大綱"
-        href: index.qmd
-      - text: "課程內容"
+      - text: "📅 課程內容"
         href: contents.qmd
-      - text: "作業與考試"
+      - text: "📝 作業與考試"
         href: assignments.qmd
 
   sidebar:
