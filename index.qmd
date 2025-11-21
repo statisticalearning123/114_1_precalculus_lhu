@@ -3,6 +3,54 @@ title: "📖 基礎數學"
 subtitle: "龍華科技大學 114 學年度第 1 學期"
 ---
 
+::: {.grid}
+::: {.g-col-12 .g-col-md-4}
+<a href="https://eportal.lhu.edu.tw" target="_blank" class="btn btn-primary" style="width: 100%; margin-bottom: 0.5rem;">
+  🏫 龍華資訊入口網站
+</a>
+:::
+
+::: {.g-col-12 .g-col-md-4}
+<button onclick="addBookmark()" class="btn btn-info" style="width: 100%; margin-bottom: 0.5rem;">
+  ⭐ 加入書籤
+</button>
+:::
+
+::: {.g-col-12 .g-col-md-4}
+<a href="changelog.qmd" class="btn btn-secondary" style="width: 100%; margin-bottom: 0.5rem;">
+  📋 查看更新紀錄
+</a>
+:::
+:::
+
+<script>
+function addBookmark() {
+  const pageTitle = document.title || '基礎數學 - 龍華科技大學';
+  const pageUrl = window.location.href;
+
+  // 檢查瀏覽器支援
+  if (window.sidebar && window.sidebar.addPanel) {
+    // Firefox
+    window.sidebar.addPanel(pageTitle, pageUrl, '');
+  } else if (window.external && ('AddFavorite' in window.external)) {
+    // IE
+    window.external.AddFavorite(pageUrl, pageTitle);
+  } else if (window.opera && window.print) {
+    // Opera
+    const elem = document.createElement('a');
+    elem.setAttribute('href', pageUrl);
+    elem.setAttribute('title', pageTitle);
+    elem.setAttribute('rel', 'sidebar');
+    elem.click();
+  } else {
+    // 其他瀏覽器（Chrome, Safari, Edge）
+    alert('請按 ' + (navigator.userAgent.toLowerCase().indexOf('mac') != -1 ? 'Cmd' : 'Ctrl') + '+D 將本頁加入書籤');
+  }
+}
+</script>
+
+---
+
 ## 📢 最近更新
 
 ::: callout-note
@@ -63,58 +111,6 @@ subtitle: "龍華科技大學 114 學年度第 1 學期"
 - **課程網站**：課程進度、教材下載、作業說明
 - **TronClass**：作業繳交、測驗作答、成績查詢
 :::
-
----
-
-## 🔗 快速連結
-
-::: {.grid}
-::: {.g-col-12 .g-col-md-4}
-<a href="https://eportal.lhu.edu.tw" target="_blank" class="btn btn-primary" style="width: 100%; margin-bottom: 0.5rem;">
-  🏫 龍華資訊入口網站
-</a>
-:::
-
-::: {.g-col-12 .g-col-md-4}
-<button onclick="addBookmark()" class="btn btn-info" style="width: 100%; margin-bottom: 0.5rem;">
-  ⭐ 加入書籤
-</button>
-:::
-
-::: {.g-col-12 .g-col-md-4}
-<a href="changelog.qmd" class="btn btn-secondary" style="width: 100%; margin-bottom: 0.5rem;">
-  📋 查看更新紀錄
-</a>
-:::
-:::
-
-<script>
-function addBookmark() {
-  const pageTitle = document.title || '基礎數學 - 龍華科技大學';
-  const pageUrl = window.location.href;
-
-  // 檢查瀏覽器支援
-  if (window.sidebar && window.sidebar.addPanel) {
-    // Firefox
-    window.sidebar.addPanel(pageTitle, pageUrl, '');
-  } else if (window.external && ('AddFavorite' in window.external)) {
-    // IE
-    window.external.AddFavorite(pageUrl, pageTitle);
-  } else if (window.opera && window.print) {
-    // Opera
-    const elem = document.createElement('a');
-    elem.setAttribute('href', pageUrl);
-    elem.setAttribute('title', pageTitle);
-    elem.setAttribute('rel', 'sidebar');
-    elem.click();
-  } else {
-    // 其他瀏覽器（Chrome, Safari, Edge）
-    alert('請按 ' + (navigator.userAgent.toLowerCase().indexOf('mac') != -1 ? 'Cmd' : 'Ctrl') + '+D 將本頁加入書籤');
-  }
-}
-</script>
-
----
 
 ---
 
