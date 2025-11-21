@@ -1,0 +1,150 @@
+% LaTeX Template for Answer Sheet
+% 龍華科技大學 - 答案卷專用模板
+
+\documentclass[12pt,a4paper]{article}
+
+% 套件載入
+\usepackage{ifxetex}
+\usepackage{fontspec}
+\usepackage{xeCJK}
+
+% 中文字型設定
+\setCJKmainfont{PingFang TC}
+\setmainfont{PingFang TC}
+\setCJKsansfont{PingFang TC}
+\setCJKmonofont{PingFang TC}
+
+% 頁面設定（縮小邊界以容納更多內容）
+\usepackage[top=4.5cm, bottom=1.5cm, left=1.8cm, right=1.8cm, headheight=4cm]{geometry}
+
+% 顏色
+\usepackage[dvipsnames]{xcolor}
+\definecolor{titlecolor}{RGB}{0,51,102}
+\definecolor{sectioncolor}{RGB}{51,51,51}
+
+% 超連結
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks=false,
+  pdfborder={0 0 0}
+}
+
+% 數學符號
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{mathtools}
+
+% 表格
+\usepackage{longtable,booktabs}
+\usepackage{array}
+
+% 列表
+\usepackage{enumitem}
+\setlist{itemsep=0.3em, parsep=0em, topsep=0.5em}
+
+% Pandoc 相容性
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+% 頁首頁尾
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+
+% 第一頁的頁首（含考生資料）
+\fancypagestyle{firstpage}{
+  \fancyhf{}
+  \fancyhead[L]{
+    \begin{minipage}[t]{0.95\textwidth}
+      \textbf{\large 龍華科技大學 114 學年度第 1 學期} \\[0.5em]
+      \textbf{\large 基礎數學 期中考 - 答案卷} \\[0.8em]
+      考生姓名：\underline{\hspace{2.5cm}}　學號：\underline{\hspace{2.5cm}}　班級：\underline{\hspace{2cm}} \\[0.5em]
+      日期：2025 年 11 月 13 日（四）
+    \end{minipage}
+  }
+  \renewcommand{\headrulewidth}{0.4pt}
+}
+
+% 其他頁的頁首
+\fancyhead[L]{\small\textcolor{gray}{龍華科技大學 - 基礎數學 - 答案卷}}
+\fancyhead[R]{\small\textcolor{gray}{第 \thepage\ 頁}}
+\fancyfoot[C]{}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% 標題樣式
+\usepackage{titlesec}
+
+% 第一層標題
+\titleformat{\section}
+  {\LARGE\bfseries\color{titlecolor}}
+  {}{0em}{}
+\titlespacing*{\section}{0pt}{1.5em}{0.5em}
+
+% 第二層標題
+\titleformat{\subsection}
+  {\Large\bfseries\color{sectioncolor}}
+  {}{0em}{}
+\titlespacing*{\subsection}{0pt}{1.2em}{0.3em}
+
+% 第三層標題
+\titleformat{\subsubsection}
+  {\large\bfseries\color{sectioncolor}}
+  {}{0em}{}
+\titlespacing*{\subsubsection}{0pt}{0.8em}{0.2em}
+
+% 段落設定（答案卷需要更大的段落間距）
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.3em}
+
+% 行距
+\usepackage{setspace}
+\setstretch{1.0}
+
+% 避免題目被切斷的設定
+\usepackage{needspace}
+\widowpenalty=10000
+\clubpenalty=10000
+\raggedbottom
+
+% 標題後不分頁
+\usepackage{etoolbox}
+\preto\section{\needspace{10\baselineskip}}
+\preto\subsection{\needspace{8\baselineskip}}
+\preto\subsubsection{\needspace{5\baselineskip}}
+
+% 自訂分隔線樣式（減少上下間距）
+% Pandoc 使用 \rule 來處理 Markdown 的 ---
+\let\oldrule\rule
+\renewcommand{\rule}[2]{%
+  \vspace{-0.8em}%
+  \oldrule{#1}{#2}%
+  \vspace{-0.8em}%
+}
+
+% 自訂 callout 環境
+\usepackage{tcolorbox}
+\tcbuselibrary{skins,breakable}
+
+\newtcolorbox{callout-tip}{
+  enhanced,
+  breakable,
+  colback=blue!5,
+  colframe=blue!50!black,
+  arc=2mm,
+  boxrule=0.5pt,
+  left=5pt,
+  right=5pt,
+  top=5pt,
+  bottom=5pt
+}
+
+% 文檔開始
+\begin{document}
+
+% 第一頁使用特殊頁首（含考生資料）
+\thispagestyle{firstpage}
+
+% 內文
+$body$
+
+\end{document}

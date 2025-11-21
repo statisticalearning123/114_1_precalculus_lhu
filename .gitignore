@@ -1,18 +1,14 @@
-# Quarto 網站建置檔案
-_site/
-.quarto/
-*.html
+# Quarto
+/.quarto/
+/_site/
 
-# 內部討論資料（不放到網站）
-docs/
-
-# R 相關
+# R
 .Rproj.user/
 .Rhistory
 .RData
 .Ruserdata
 
-# PDF 建置中間檔案
+# LaTeX
 *.aux
 *.log
 *.out
@@ -26,15 +22,29 @@ docs/
 .AppleDouble
 .LSOverride
 
-# 編輯器
+# Editors
 .vscode/
 .idea/
 *.swp
 *.swo
 *~
 
-# 其他
+# Backups
 *.bak
 *.tmp
 
-/.quarto/
+# Archives
+archive/
+
+# Office temporary files
+~$*
+*.xlsx#
+
+# Posit Connect (using GitHub deployment instead)
+.posit/
+
+# Claude Code
+.claude/
+
+# VS Code workspace
+*.code-workspace

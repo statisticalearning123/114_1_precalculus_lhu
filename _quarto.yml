@@ -3,9 +3,7 @@ project:
   output-dir: _site
   render:
     - "*.qmd"
-    - "!docs/"
-    - "!materials.qmd"
-    - "!teaching-method.qmd"
+    - "!archive/"
 
 website:
   title: "基礎數學"
@@ -17,6 +15,8 @@ website:
         href: contents.qmd
       - text: "📝 作業與考試"
         href: assignments.qmd
+      - text: "📋 更新紀錄"
+        href: changelog.qmd
 
   sidebar:
     style: "floating"
@@ -28,12 +28,17 @@ website:
           - assignments.qmd
 
   page-footer:
-    center: "龍華科技大學 114-1 基礎數學"
+    left: "© 2025 龍華科技大學 基礎數學"
+    center:
+      - text: "📋 更新紀錄"
+        href: changelog.qmd
+    right: "114 學年度第 1 學期"
 
 format:
   html:
     theme:
-      light: [cosmo, custom.scss]
+      - cosmo
+      - custom.scss
     css: styles.css
     toc: true
     toc-depth: 3
@@ -41,4 +46,7 @@ format:
     link-external-newwindow: true
     smooth-scroll: true
     code-copy: true
-    lang: zh-TW
+    lang: zh
+
+execute:
+  freeze: auto

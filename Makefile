@@ -10,36 +10,36 @@ NC = \033[0m # No Color
 # 預設目標：建置 PDF
 .PHONY: all
 all:
-	@$(MAKE) -C class_note all
+	@$(MAKE) -C materials/_source all
 
 # ========== 課程筆記 PDF 相關 ==========
 
 .PHONY: rebuild clean pdf check install-deps open list stats
 rebuild:
 	@echo "$(BLUE)重新生成所有課程筆記 PDF$(NC)"
-	@$(MAKE) -C class_note rebuild
+	@$(MAKE) -C materials/_source rebuild
 
 clean:
 	@echo "$(BLUE)清除課程筆記 PDF$(NC)"
-	@$(MAKE) -C class_note clean
+	@$(MAKE) -C materials/_source clean
 
 pdf:
-	@$(MAKE) -C class_note pdf DATE=$(DATE)
+	@$(MAKE) -C materials/_source pdf DATE=$(DATE)
 
 check:
-	@$(MAKE) -C class_note check
+	@$(MAKE) -C materials/_source check
 
 install-deps:
-	@$(MAKE) -C class_note install-deps
+	@$(MAKE) -C materials/_source install-deps
 
 open:
-	@$(MAKE) -C class_note open
+	@$(MAKE) -C materials/_source open
 
 list:
-	@$(MAKE) -C class_note list
+	@$(MAKE) -C materials/_source list
 
 stats:
-	@$(MAKE) -C class_note stats
+	@$(MAKE) -C materials/_source stats
 
 # ========== Quarto 課程網站相關 ==========
 

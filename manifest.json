@@ -1,0 +1,650 @@
+{
+  "version": 1,
+  "locale": "C",
+  "platform": "4.5.2",
+  "metadata": {
+    "appmode": "quarto-static",
+    "primary_rmd": "index.qmd",
+    "primary_html": null,
+    "content_category": null,
+    "has_parameters": false
+  },
+  "quarto": {
+    "version": "1.7.32",
+    "engines": ["markdown"]
+  },
+  "packages": null,
+  "files": {
+    "_quarto.yml": {
+      "checksum": "cd50ce966adea204ae9fbcf55838dc8e"
+    },
+    "_site/assignments.html": {
+      "checksum": "5467f0ed0c4746d7b58b2be88a902415"
+    },
+    "_site/changelog.html": {
+      "checksum": "44dc7c055f3af088f880f1c031e7ac6a"
+    },
+    "_site/contents.html": {
+      "checksum": "0852ad5985e36163b9f8e7d84140b079"
+    },
+    "_site/index.html": {
+      "checksum": "c34a920112c628d63e5774cd10f3a594"
+    },
+    "_site/materials/exams/midterm/2025-期中考-答案卷.pdf": {
+      "checksum": "f2acf11caddfd5c0b3cc0742f5a08511"
+    },
+    "_site/materials/exams/midterm/2025-期中考-考卷.pdf": {
+      "checksum": "879a5b9fb3fc7645efe746c15417f205"
+    },
+    "_site/materials/homework_solutions/hw01/作業一詳解.pdf": {
+      "checksum": "b40416cd683fe8b7c3ed1fcb70368bf8"
+    },
+    "_site/materials/lecture_notes/lecture_note_organized/2025-10-02_基礎數學_課程筆記_整理版.pdf": {
+      "checksum": "2ed28e817daf06ea443e8e87f2075ec0"
+    },
+    "_site/materials/lecture_notes/lecture_note_organized/2025-10-16_基礎數學_課程筆記_整理版.pdf": {
+      "checksum": "f373d8d71c9bf243a66e101ff97cc52d"
+    },
+    "_site/materials/lecture_notes/lecture_note_organized/2025-10-23_基礎數學_課程筆記_整理版.pdf": {
+      "checksum": "0159ceea879fa865f13d5b5c4ab56796"
+    },
+    "_site/materials/lecture_notes/lecture_note_organized/2025-10-30_基礎數學_課程筆記_整理版.pdf": {
+      "checksum": "97275fcc668d7653333c83b3de6518b2"
+    },
+    "_site/materials/lecture_notes/lecture_note_organized/2025-11-20_基礎數學_課程筆記_整理版.pdf": {
+      "checksum": "2789cd5f900095028295681c11250d61"
+    },
+    "_site/materials/lecture_notes/lecture_note/2025-10-02_基礎數學_課程筆記_手寫原稿.pdf": {
+      "checksum": "0361de93cb88074a1761526256508904"
+    },
+    "_site/materials/lecture_notes/lecture_note/2025-10-16_基礎數學_課程筆記_手寫原稿.pdf": {
+      "checksum": "297a68324a35424c1f930aec9eaba076"
+    },
+    "_site/materials/lecture_notes/lecture_note/2025-10-23_基礎數學_課程筆記_手寫原稿.pdf": {
+      "checksum": "253be3e20072e3c7e032251154108c59"
+    },
+    "_site/materials/lecture_notes/lecture_note/2025-10-30_基礎數學_課程筆記_手寫原稿.pdf": {
+      "checksum": "88879353301b3c78f3354c51df053a9a"
+    },
+    "_site/materials/lecture_notes/lecture_note/2025-11-20_基礎數學_課程筆記_手寫原稿.pdf": {
+      "checksum": "e0167c3fcdbfe42d88c85bf93f6dd1ae"
+    },
+    "_site/search.json": {
+      "checksum": "d4a380cf263981b0fe307db8e828908e"
+    },
+    "_site/site_libs/bootstrap/bootstrap-d2adc220f31cc9e73aa0df5bccfc26bb.min.css": {
+      "checksum": "d2adc220f31cc9e73aa0df5bccfc26bb"
+    },
+    "_site/site_libs/bootstrap/bootstrap-icons.css": {
+      "checksum": "2318f137d201fbf51601fa0faba6bef7"
+    },
+    "_site/site_libs/bootstrap/bootstrap-icons.woff": {
+      "checksum": "1a51dfbe5467607389d603c02a77cd10"
+    },
+    "_site/site_libs/bootstrap/bootstrap.min.js": {
+      "checksum": "e2b09c06f0e714b6144a6788a28e3950"
+    },
+    "_site/site_libs/clipboard/clipboard.min.js": {
+      "checksum": "15f52a1ee547f2bdd46e56747332ca2d"
+    },
+    "_site/site_libs/quarto-html/anchor.min.js": {
+      "checksum": "91bcf6cd1fd88fec3f109811e5fc3546"
+    },
+    "_site/site_libs/quarto-html/popper.min.js": {
+      "checksum": "3a4a291ccf3f1ea0f82b641542fd3827"
+    },
+    "_site/site_libs/quarto-html/quarto-syntax-highlighting-b03387b83133b4ea90b3ad607eb60116.css": {
+      "checksum": "b03387b83133b4ea90b3ad607eb60116"
+    },
+    "_site/site_libs/quarto-html/quarto.js": {
+      "checksum": "6f4245742deb3cc92337dbe2701ccfe1"
+    },
+    "_site/site_libs/quarto-html/tabsets/tabsets.js": {
+      "checksum": "e8d6a8862b33ccc461f8fd532e05b365"
+    },
+    "_site/site_libs/quarto-html/tippy.css": {
+      "checksum": "ebd6f8ce46a677e1a4f5f8a8317109a9"
+    },
+    "_site/site_libs/quarto-html/tippy.umd.min.js": {
+      "checksum": "d828775275749701b48bd9d958814111"
+    },
+    "_site/site_libs/quarto-html/zenscroll-min.js": {
+      "checksum": "717c95813ddfc3d41e98c26642fc1372"
+    },
+    "_site/site_libs/quarto-nav/headroom.min.js": {
+      "checksum": "ace0360e576db9b6e7df48ac68ddbbf4"
+    },
+    "_site/site_libs/quarto-nav/quarto-nav.js": {
+      "checksum": "12d334846b27bdb493298c08277bdf7f"
+    },
+    "_site/site_libs/quarto-search/autocomplete.umd.js": {
+      "checksum": "c64544db941e048f2652217cb9a7f29c"
+    },
+    "_site/site_libs/quarto-search/fuse.min.js": {
+      "checksum": "de7d60e4a6881074275feca14b84a49d"
+    },
+    "_site/site_libs/quarto-search/quarto-search.js": {
+      "checksum": "bb16b7e73be13eba97c99d25b2a476b3"
+    },
+    "_site/styles.css": {
+      "checksum": "0acf742f03adbe39e674110ed0483a20"
+    },
+    ".claude/commands/generate-organized-notes.md": {
+      "checksum": "a732c5fe8076b87764caa5d61476c9b1"
+    },
+    ".claude/settings.json": {
+      "checksum": "84cfc2c020e6a42420d98e9ea1b86625"
+    },
+    ".claude/settings.local.json": {
+      "checksum": "eb64c8de6723f3ae6a0cb5a10489ab34"
+    },
+    ".posit/publish/114_1_precalculus_lhu-IM6I.toml": {
+      "checksum": "43b060879e75761bc6f9d89b4bdf4367"
+    },
+    ".posit/publish/deployments/deployment-O4B0.toml": {
+      "checksum": "49d5277d6265340bbfd61998aba3b034"
+    },
+    ".quartoignore": {
+      "checksum": "f2e736b9841f61162473d7615f681e02"
+    },
+    "114_1_龍華科大.code-workspace": {
+      "checksum": "25bf50b0ec79d01de8b83b7b5801b4ac"
+    },
+    "announcements/2025-11-16_作業二已發布與注意事項.md": {
+      "checksum": "9e930ddcda6d2da23913fe300e3cfff3"
+    },
+    "archive/_quarto_simple.yml": {
+      "checksum": "08363909480cd5240c45c61828fc5a89"
+    },
+    "archive/_quarto.yml": {
+      "checksum": "08363909480cd5240c45c61828fc5a89"
+    },
+    "archive/_template/_quarto.yml": {
+      "checksum": "9f37cc9877e0ef8147ddf41ab0e0c07a"
+    },
+    "archive/_template/assets/css/styles.css": {
+      "checksum": "bcc1d848f504a557029f93dfd9378a80"
+    },
+    "archive/_template/assignments/hw01.qmd": {
+      "checksum": "b26dfa98f1d555ea51b7808123b4a9fb"
+    },
+    "archive/_template/DEPLOYMENT.md": {
+      "checksum": "a168a78128e7490b3e395254ed2dd41f"
+    },
+    "archive/_template/index.qmd": {
+      "checksum": "80f64f0cae91e53f2686ee67cf489933"
+    },
+    "archive/_template/README.md": {
+      "checksum": "9683c92b90f28e4982dc9594db8a950b"
+    },
+    "archive/_template/requirements.txt": {
+      "checksum": "e04f0335f9a45be51f1cd86b977ccd84"
+    },
+    "archive/_template/resources/links.qmd": {
+      "checksum": "77b85ee9af731860f388ff6caf353c74"
+    },
+    "archive/_template/resources/notes.qmd": {
+      "checksum": "ae82d2d25dd60e980c6cc09282da2e26"
+    },
+    "archive/_template/schedule.qmd": {
+      "checksum": "a0318d7bb7e2de3d3e8c6b40d01bfa36"
+    },
+    "archive/_template/syllabus.qmd": {
+      "checksum": "64e40f1469d4293fb03dfd65c0a92ac8"
+    },
+    "archive/_template/weeks/week01/index.qmd": {
+      "checksum": "b3f5969102c4d1693de8067c04577d85"
+    },
+    "archive/_template/weeks/week02/index.qmd": {
+      "checksum": "fe990f0c7b4e06392a76120f92ec539d"
+    },
+    "archive/_template/weeks/week03/index.qmd": {
+      "checksum": "a35bd7c313de05365ef42d2cb8391f91"
+    },
+    "archive/.posit_backup_20251031_023448/publish/114_1_precalculus_lhu-A92J.toml": {
+      "checksum": "d7c73e36c816ff2162331a32abe0a37b"
+    },
+    "archive/.posit_backup_20251031_023448/publish/114_1_precalculus_lhu-HLBH.toml": {
+      "checksum": "9f019f3e7c698c2f1b2eb3bf3f907270"
+    },
+    "archive/.posit_backup_20251031_023448/publish/deployments/deployment-TJHS.toml": {
+      "checksum": "0c4d513879a6b7c51f36d4ab2c55778a"
+    },
+    "archive/.posit_backup_20251031_023448/publish/deployments/deployment-V5IC.toml": {
+      "checksum": "415c931d3418befcc7ae851817b8bfec"
+    },
+    "archive/.posit_old_20251031_025416/publish/114_1_precalculus_lhu-A92J.toml": {
+      "checksum": "fed8a2809b8bc406f6b06683de9773db"
+    },
+    "archive/.posit_old_20251031_025416/publish/114_1_precalculus_lhu-HLBH.toml": {
+      "checksum": "d7f5ae6670181220b0559c71159a9c92"
+    },
+    "archive/.posit_old_20251031_025416/publish/deployments/deployment-TJHS.toml": {
+      "checksum": "0c4d513879a6b7c51f36d4ab2c55778a"
+    },
+    "archive/.posit_old_20251031_025416/publish/deployments/deployment-V5IC.toml": {
+      "checksum": "2ec3a7397e6fb2d0ae82a1e3bcc786ed"
+    },
+    "archive/class_note_backup_20251024/draft/2025-10-02_基礎數學_課程筆記_上課版.pdf": {
+      "checksum": "0361de93cb88074a1761526256508904"
+    },
+    "archive/class_note_backup_20251024/draft/2025-10-02_基礎數學_課程筆記_整理版.md": {
+      "checksum": "48af91a8d71ca8f2f702426ef170c90e"
+    },
+    "archive/class_note_backup_20251024/draft/2025-10-02_基礎數學_課程筆記_整理版.pdf": {
+      "checksum": "78a0c92f092da12d7849df6f021addeb"
+    },
+    "archive/class_note_backup_20251024/draft/2025-10-16_基礎數學_課程筆記_上課版_notability.note": {
+      "checksum": "9d21bf3672fa69948887475a2ee83fab"
+    },
+    "archive/class_note_backup_20251024/draft/2025-10-16_基礎數學_課程筆記_上課版.pdf": {
+      "checksum": "297a68324a35424c1f930aec9eaba076"
+    },
+    "archive/class_note_backup_20251024/draft/2025-10-23_基礎數學_課程筆記_上課版.pdf": {
+      "checksum": "253be3e20072e3c7e032251154108c59"
+    },
+    "archive/class_note_backup_20251024/Makefile": {
+      "checksum": "2b6d44b20e53236b24a85037fae1c9b7"
+    },
+    "archive/class_note_backup_20251024/pdf_convert.sh": {
+      "checksum": "3e80c20419f8b58692d83df3230418d7"
+    },
+    "archive/class_note_backup_20251024/pdf_output/2025-10-02_基礎數學_課程筆記.pdf": {
+      "checksum": "78a0c92f092da12d7849df6f021addeb"
+    },
+    "archive/class_note_backup_20251024/README.md": {
+      "checksum": "2f9f811eb7320bc1a321d4bb72eb455a"
+    },
+    "archive/class_note_backup_20251024/template.tex": {
+      "checksum": "a4a3125565961bb608c9da1e1747ecae"
+    },
+    "archive/class_note_backup_20251024/使用說明.md": {
+      "checksum": "1a80a5f4eb2d8654b03cc78c900843f9"
+    },
+    "archive/class_note/draft/2025-10-02_基礎數學_課程筆記_上課版.pdf": {
+      "checksum": "0361de93cb88074a1761526256508904"
+    },
+    "archive/class_note/draft/2025-10-02_基礎數學_課程筆記_整理版.md": {
+      "checksum": "48af91a8d71ca8f2f702426ef170c90e"
+    },
+    "archive/class_note/draft/2025-10-02_基礎數學_課程筆記_整理版.pdf": {
+      "checksum": "78a0c92f092da12d7849df6f021addeb"
+    },
+    "archive/class_note/draft/2025-10-16_基礎數學_課程筆記_上課版_notability.note": {
+      "checksum": "9d21bf3672fa69948887475a2ee83fab"
+    },
+    "archive/class_note/draft/2025-10-16_基礎數學_課程筆記_上課版.pdf": {
+      "checksum": "297a68324a35424c1f930aec9eaba076"
+    },
+    "archive/class_note/draft/2025-10-23_基礎數學_課程筆記_上課版.pdf": {
+      "checksum": "253be3e20072e3c7e032251154108c59"
+    },
+    "archive/class_note/Makefile": {
+      "checksum": "2b6d44b20e53236b24a85037fae1c9b7"
+    },
+    "archive/class_note/pdf_convert.sh": {
+      "checksum": "3e80c20419f8b58692d83df3230418d7"
+    },
+    "archive/class_note/pdf_output/2025-10-02_基礎數學_課程筆記.pdf": {
+      "checksum": "78a0c92f092da12d7849df6f021addeb"
+    },
+    "archive/class_note/README.md": {
+      "checksum": "2f9f811eb7320bc1a321d4bb72eb455a"
+    },
+    "archive/class_note/template.aux": {
+      "checksum": "3985256e7290058c681f74d7a3565a19"
+    },
+    "archive/class_note/template.fdb_latexmk": {
+      "checksum": "ea1d82798d549de0d560d6f09ded9a3e"
+    },
+    "archive/class_note/template.fls": {
+      "checksum": "f7fe440c4df26cb6d5ac4aca21b2eda0"
+    },
+    "archive/class_note/template.log": {
+      "checksum": "ce7939cae6c77509d33547cf81d88221"
+    },
+    "archive/class_note/template.tex": {
+      "checksum": "a4a3125565961bb608c9da1e1747ecae"
+    },
+    "archive/class_note/使用說明.md": {
+      "checksum": "1a80a5f4eb2d8654b03cc78c900843f9"
+    },
+    "archive/CLAUDE_如何生成整理版筆記.md": {
+      "checksum": "254a8184aacda2d77a1f6f2c6883d46b"
+    },
+    "archive/docs/01_教學順序分析.md": {
+      "checksum": "787b2a1612fa21e9bdb7554476ab788a"
+    },
+    "archive/docs/02_改進建議.md": {
+      "checksum": "c9287b3ae05b6f4efd54cab4b3439e67"
+    },
+    "archive/docs/03_題目驅動教學法.md": {
+      "checksum": "ac82b63123ed9ddf51cbee9a6196c68a"
+    },
+    "archive/docs/04_分層教學策略.md": {
+      "checksum": "af65d69f374780a648ca13264ccd77c2"
+    },
+    "archive/docs/README.md": {
+      "checksum": "60b68599e215e1971af43ba1b308361d"
+    },
+    "archive/docs/演算法式教學/01_演算法式教學概論.md": {
+      "checksum": "edc526947748d9fb18522587bf600ccc"
+    },
+    "archive/docs/演算法式教學/05_框框法的教學哲學.md": {
+      "checksum": "7af303bae717ab8a4890fedba9f1b93d"
+    },
+    "archive/docs/演算法式教學/06_框框法的認知科學基礎.md": {
+      "checksum": "397818caa6083e2fd96a10772fc40b4b"
+    },
+    "archive/docs/演算法式教學/07_程序記憶的持久性.md": {
+      "checksum": "8c9dfddba55110cac7e6b70108b885c4"
+    },
+    "archive/docs/演算法式教學/08_數學本質的誤解.md": {
+      "checksum": "d739907e7ac6c6e50a57d7b2570b5265"
+    },
+    "archive/docs/演算法式教學/09_其他可能的批評與回應.md": {
+      "checksum": "55e1eb0f9ace0eab9e24e58de778f245"
+    },
+    "archive/docs/演算法式教學/README.md": {
+      "checksum": "892572709f0bb44966d4213f713512d4"
+    },
+    "archive/materials.qmd": {
+      "checksum": "73b1d37c5b17e237d0436e1b4cad0935"
+    },
+    "archive/PDF轉Markdown_Prompt.md": {
+      "checksum": "78c9823416b0a8200f13f1859d849ab7"
+    },
+    "archive/posit_backup_20251031_021755/.posit/publish/114_1_precalculus_lhu-BO1G.toml": {
+      "checksum": "ea7988aeb27eb8d5a76b10637c09e65a"
+    },
+    "archive/posit_backup_20251031_021755/.posit/publish/deployments/deployment-7KQC.toml": {
+      "checksum": "e33299b54b4c7c4ac44b8ecc5d39c304"
+    },
+    "archive/README_website.md": {
+      "checksum": "824ce4ec2d6cc198dac90c5400e82351"
+    },
+    "archive/teaching-method.qmd": {
+      "checksum": "f8cf6439ebbb543bb5df20ea4efee1ab"
+    },
+    "assignments.qmd": {
+      "checksum": "64dbe6a17c8f13eff81df7c2e0b9c8f1"
+    },
+    "changelog.qmd": {
+      "checksum": "3cc3e28447cf0b316223e4bc48e4d102"
+    },
+    "CLAUDE.md": {
+      "checksum": "f8c77a7e937ebd2a8423b9fa12bba29d"
+    },
+    "contents.qmd": {
+      "checksum": "156d1408ecf32108b5722b899a42caa3"
+    },
+    "custom.scss": {
+      "checksum": "dbb70b884617dde5e49ca3d44358bcec"
+    },
+    "DESIGN_PRINCIPLES.md": {
+      "checksum": "af3af5947c567cb6ceeea4e3dfbf9991"
+    },
+    "index.qmd": {
+      "checksum": "f3ab9d14bb9c3b7ea6626bc7a0d26215"
+    },
+    "Makefile": {
+      "checksum": "1600d2d6d4b433508501892553ce261f"
+    },
+    "materials/_source/2025-10-16_基礎數學_課程筆記_上課版_notability.note": {
+      "checksum": "9d21bf3672fa69948887475a2ee83fab"
+    },
+    "materials/_source/Makefile": {
+      "checksum": "7851fb1f199dbe64bd5ac29790154d1e"
+    },
+    "materials/_source/template.tex": {
+      "checksum": "84fa8b1c8cf0e90a91a7e7e47e60b323"
+    },
+    "materials/exams/midterm/2025-期中考-答案卷.md": {
+      "checksum": "af1bd1ae280e6c6e0106977bb94c4479"
+    },
+    "materials/exams/midterm/2025-期中考-答案卷.pdf": {
+      "checksum": "f2acf11caddfd5c0b3cc0742f5a08511"
+    },
+    "materials/exams/midterm/2025-期中考-考卷-正式版.md": {
+      "checksum": "876046dddd4705e600d0e9dcdbaaf59a"
+    },
+    "materials/exams/midterm/2025-期中考-考卷.pdf": {
+      "checksum": "879a5b9fb3fc7645efe746c15417f205"
+    },
+    "materials/exams/midterm/2025-期中考-考卷與答案卷.pdf": {
+      "checksum": "29d8f59d9dff8fbf2853ea0ba439e5b5"
+    },
+    "materials/exams/midterm/2025-期中考-詳解.md": {
+      "checksum": "844e9627c5dbba44e40e3f114c0ae12d"
+    },
+    "materials/exams/midterm/archive/2025-期中考-考卷.md": {
+      "checksum": "6879206eb63dd3362155be7f540cded8"
+    },
+    "materials/exams/midterm/Makefile": {
+      "checksum": "c7800264f312ea94c447fdf07937e572"
+    },
+    "materials/exams/midterm/README.md": {
+      "checksum": "bbdbc83eb229bd3dc07d2b989744294e"
+    },
+    "materials/exams/midterm/template-answer-sheet.tex": {
+      "checksum": "6d8f40752e4d285e7702d506f95f4e48"
+    },
+    "materials/exams/midterm/template-exam.tex": {
+      "checksum": "4ea5306c79f2ba7e2f8b545af8021c49"
+    },
+    "materials/exams/midterm/期中考公式表.md": {
+      "checksum": "65dd1ff2dd6a18376a1ee1c9c24fada4"
+    },
+    "materials/exams/midterm/期中考試題紙.doc": {
+      "checksum": "e2c88261fc68e70f8deb2c210a1c189e"
+    },
+    "materials/exams/README.md": {
+      "checksum": "e22ce2491a15dc2704554b4c621b2f0b"
+    },
+    "materials/homework_solutions/hw01/作業一詳解.md": {
+      "checksum": "522f317262210e6df964f774dfbf8b10"
+    },
+    "materials/homework_solutions/hw01/作業一詳解.pdf": {
+      "checksum": "b40416cd683fe8b7c3ed1fcb70368bf8"
+    },
+    "materials/homework_solutions/hw01/基礎數學-課後作業一.pdf": {
+      "checksum": "57f68b6131a8f306137ec8791437620f"
+    },
+    "materials/homework_solutions/hw02/作業二_TronClass題庫.xls": {
+      "checksum": "498d7c31bb248602ec11432e3facb276"
+    },
+    "materials/homework_solutions/hw02/作業二_TronClass題庫.xls.zip": {
+      "checksum": "933502a9df3a58c0a85f313c060a9436"
+    },
+    "materials/homework_solutions/hw02/作業二詳解.md": {
+      "checksum": "ac1f9d92cf40d89a46b0745cf00e25a0"
+    },
+    "materials/homework_solutions/hw02/作業二詳解.pdf": {
+      "checksum": "a0f8b3684008ed98bfc1fb095fe9188f"
+    },
+    "materials/homework_solutions/hw02/作業二題目.md": {
+      "checksum": "d5b5fe1f0cb7bed6ded5774fdda43357"
+    },
+    "materials/homework_solutions/hw02/作業二題目.pdf": {
+      "checksum": "56cb08efee10b2dcc316028c2c575547"
+    },
+    "materials/homework_solutions/README.md": {
+      "checksum": "c5795173a022a21f4dd07b1bb220f5e8"
+    },
+    "materials/homework_solutions/subject-import-zh-tw.zip": {
+      "checksum": "5b6aeae3ae6294fd9649566faadd3c83"
+    },
+    "materials/homework_solutions/導入題庫官方範本/1539756344942.png": {
+      "checksum": "854c9b8616e3786c49ed7b6e8cc5f52d"
+    },
+    "materials/homework_solutions/導入題庫官方範本/1539756398632.jpg": {
+      "checksum": "d45ccf14561191dbb019519bd2f31cef"
+    },
+    "materials/homework_solutions/導入題庫官方範本/導入題庫官方範本.csv": {
+      "checksum": "572df20bd1f4f5082b21cf2818298a0f"
+    },
+    "materials/homework_solutions/導入題庫官方範本/導入題庫官方範本.xls": {
+      "checksum": "fba083179434f6147d91c00c76430ef0"
+    },
+    "materials/lecture_notes/lecture_note_organized/2025-10-02_基礎數學_課程筆記_整理版.md": {
+      "checksum": "ab35252a97d56757689b39faa17163e9"
+    },
+    "materials/lecture_notes/lecture_note_organized/2025-10-02_基礎數學_課程筆記_整理版.pdf": {
+      "checksum": "2ed28e817daf06ea443e8e87f2075ec0"
+    },
+    "materials/lecture_notes/lecture_note_organized/2025-10-16_基礎數學_課程筆記_整理版.md": {
+      "checksum": "cb7887d294690710e98150e52f83377e"
+    },
+    "materials/lecture_notes/lecture_note_organized/2025-10-16_基礎數學_課程筆記_整理版.pdf": {
+      "checksum": "f373d8d71c9bf243a66e101ff97cc52d"
+    },
+    "materials/lecture_notes/lecture_note_organized/2025-10-23_基礎數學_課程筆記_整理版.md": {
+      "checksum": "7893b4a4ec8d34dbd8303d458073bd9a"
+    },
+    "materials/lecture_notes/lecture_note_organized/2025-10-23_基礎數學_課程筆記_整理版.pdf": {
+      "checksum": "0159ceea879fa865f13d5b5c4ab56796"
+    },
+    "materials/lecture_notes/lecture_note_organized/2025-10-30_基礎數學_課程筆記_整理版.md": {
+      "checksum": "4456560f1397e0a378336306e77a4246"
+    },
+    "materials/lecture_notes/lecture_note_organized/2025-10-30_基礎數學_課程筆記_整理版.pdf": {
+      "checksum": "97275fcc668d7653333c83b3de6518b2"
+    },
+    "materials/lecture_notes/lecture_note_organized/2025-11-20_基礎數學_課程筆記_整理版.md": {
+      "checksum": "9743ee763f7f3407e64fd635c330f256"
+    },
+    "materials/lecture_notes/lecture_note_organized/2025-11-20_基礎數學_課程筆記_整理版.pdf": {
+      "checksum": "2789cd5f900095028295681c11250d61"
+    },
+    "materials/lecture_notes/lecture_note/2025-10-02_基礎數學_課程筆記_手寫原稿.pdf": {
+      "checksum": "0361de93cb88074a1761526256508904"
+    },
+    "materials/lecture_notes/lecture_note/2025-10-16_基礎數學_課程筆記_手寫原稿.pdf": {
+      "checksum": "297a68324a35424c1f930aec9eaba076"
+    },
+    "materials/lecture_notes/lecture_note/2025-10-23_基礎數學_課程筆記_手寫原稿.pdf": {
+      "checksum": "253be3e20072e3c7e032251154108c59"
+    },
+    "materials/lecture_notes/lecture_note/2025-10-30_基礎數學_課程筆記_手寫原稿.pdf": {
+      "checksum": "88879353301b3c78f3354c51df053a9a"
+    },
+    "materials/lecture_notes/lecture_note/2025-11-20_基礎數學_課程筆記_手寫原稿.pdf": {
+      "checksum": "e0167c3fcdbfe42d88c85bf93f6dd1ae"
+    },
+    "materials/lecture_notes/Makefile": {
+      "checksum": "ff2ceb0795690e67bb6f8b2e0d2032f2"
+    },
+    "materials/lecture_notes/template.tex": {
+      "checksum": "84fa8b1c8cf0e90a91a7e7e47e60b323"
+    },
+    "materials/textbook/微積分-基礎篇/CH01 函數的極限與連續.pdf": {
+      "checksum": "c2c51e5c4834359805d883f9e75a483d"
+    },
+    "materials/textbook/微積分-基礎篇/CH01.ppt": {
+      "checksum": "23e01c301c4a70456a35660893b48de7"
+    },
+    "materials/textbook/微積分-基礎篇/CH01習題.doc": {
+      "checksum": "1f595d2206c0471caaff743ad8d6ee58"
+    },
+    "materials/textbook/微積分-基礎篇/CH02 導數與定積分.pdf": {
+      "checksum": "04376cd4dbd76dd9041724e88cbb7ec5"
+    },
+    "materials/textbook/微積分-基礎篇/CH02.ppt": {
+      "checksum": "4c1fb30db8f3b71a9cdf42cd8d56b693"
+    },
+    "materials/textbook/微積分-基礎篇/CH02習題.doc": {
+      "checksum": "b636f686a7166e80e448f59f4007cc07"
+    },
+    "materials/textbook/微積分-基礎篇/CH03.pdf": {
+      "checksum": "ee1dad2476147dc87b653fb23efa3068"
+    },
+    "materials/textbook/微積分-基礎篇/CH03.ppt": {
+      "checksum": "9f739c1df3ee248f725a1c5af5f0eac5"
+    },
+    "materials/textbook/微積分-基礎篇/CH03習題.doc": {
+      "checksum": "9cc6fd537243d642243db58fdf98f874"
+    },
+    "materials/textbook/微積分-基礎篇/CH04.pdf": {
+      "checksum": "855d43cfcec9b110664af11664a58380"
+    },
+    "materials/textbook/微積分-基礎篇/CH04.ppt": {
+      "checksum": "11eabe15ab3bf61397522b3fec64bb06"
+    },
+    "materials/textbook/微積分-基礎篇/CH04習題.doc": {
+      "checksum": "a162eb81f351ec08b9d1f6bab81b8484"
+    },
+    "materials/textbook/微積分-基礎篇/CH05.ppt": {
+      "checksum": "c227502dafc15e12988bade00a960284"
+    },
+    "materials/textbook/微積分-基礎篇/CH05習題.doc": {
+      "checksum": "a7d59944689a3c9b6b25031440c16af0"
+    },
+    "materials/textbook/微積分-基礎篇/CH06.ppt": {
+      "checksum": "9f80a787a6b7d20997b102660692e413"
+    },
+    "materials/textbook/微積分-基礎篇/CH06習題.doc": {
+      "checksum": "341fcee0670945effc7514d307db7eef"
+    },
+    "materials/textbook/微積分-基礎篇/CH07.ppt": {
+      "checksum": "e94ed9495505f10c9cb741e027bc669c"
+    },
+    "materials/textbook/微積分-基礎篇/CH07習題.doc": {
+      "checksum": "e6af754835606354f04476b0fcdaf3b8"
+    },
+    "materials/textbook/微積分-基礎篇/不定積分公式.doc": {
+      "checksum": "09bf2f31980960a961e1e9d9f2f7e75e"
+    },
+    "materials/textbook/微積分-基礎篇/目錄頁.pptx": {
+      "checksum": "61841aea6909aacff1b595046416adf0"
+    },
+    "materials/textbook/微積分-基礎篇/習題解答.doc": {
+      "checksum": "0821e73e54c17f66cf22c698e4e10b11"
+    },
+    "materials/textbook/微積分/CH01 緒論.pdf": {
+      "checksum": "b7f0006a704d558e2592f20ad6db31c2"
+    },
+    "materials/textbook/微積分/CH02 函數.pdf": {
+      "checksum": "40811fde41b3f1ed594702cfa9b75a77"
+    },
+    "materials/textbook/微積分/CH03 函數的極限與連續.pdf": {
+      "checksum": "40d7f43372e13ed4ab0394f4d2513c04"
+    },
+    "materials/textbook/微積分/CH04 微分.pdf": {
+      "checksum": "b44b7fe38ac62d9126377f8999e81850"
+    },
+    "materials/textbook/微積分/CH05 微分的應用.pdf": {
+      "checksum": "fb1386803d4ae6fdc3ea90142d29e565"
+    },
+    "materials/textbook/微積分/CH06 積分.pdf": {
+      "checksum": "3abd871fe58769d856fcb767b8c4e8c3"
+    },
+    "materials/textbook/微積分/CH07 積分的應用.pdf": {
+      "checksum": "b9e5cbba5eccf112768ca9dba7158096"
+    },
+    "materials/textbook/微積分/習題解答.pdf": {
+      "checksum": "2d8236105e77fdef6a4d7e02bb15d8a7"
+    },
+    "materials/textbook/微積分/附錄A.pdf": {
+      "checksum": "dc9b2ae9611001f905a0562e1f4afe9c"
+    },
+    "materials/textbook/微積分/附錄B.pdf": {
+      "checksum": "2c34ea5b061c5774f28b7437f8a9836b"
+    },
+    "materials/textbook/微積分/附錄C.pdf": {
+      "checksum": "2f9e7ef6804b5be7e55c82e949a6b4db"
+    },
+    "materials/textbook/微積分/附錄D.pdf": {
+      "checksum": "e8a5e7333b736f83060a970b0750be15"
+    },
+    "README.md": {
+      "checksum": "6639932f9a24b6323b1c1c8ebc07aed1"
+    },
+    "styles.css": {
+      "checksum": "0acf742f03adbe39e674110ed0483a20"
+    },
+    "期中考.xlsx": {
+      "checksum": "f5d5bbae93606bd1d64327fd35c7a877"
+    }
+  },
+  "users": null
+}

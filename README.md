@@ -55,17 +55,41 @@ make deploy
 
 ```
 .
-├── _quarto.yml           # Quarto 網站設定
-├── index.qmd             # 首頁（課程大綱）
-├── contents.qmd          # 課程內容
-├── assignments.qmd       # 作業與考試
-├── class_note/           # 課堂筆記系統
-│   ├── draft/            # Markdown 筆記原稿
-│   ├── pdf_output/       # 生成的 PDF
-│   └── template.tex      # LaTeX 模板
-├── Makefile              # 自動化工具
-└── DESIGN_PRINCIPLES.md  # 設計原則文件
+├── _quarto.yml              # Quarto 網站設定
+├── index.qmd                # 首頁（課程大綱）
+├── contents.qmd             # 課程內容
+├── assignments.qmd          # 作業與考試
+├── materials/               # 課程資料（公開給學生）
+│   ├── lectures/            # 上課版筆記（手稿 PDF）
+│   ├── notes/               # 整理版筆記（PDF + Markdown）
+│   ├── homework_solutions/  # 作業詳解（PDF + Markdown）
+│   └── _source/             # 工作檔案（template.tex, Makefile）
+├── Makefile                 # 自動化工具
+└── DESIGN_PRINCIPLES.md     # 設計原則文件
 ```
+
+### 📂 materials/ 資料夾說明
+
+- **lectures/**：上課版筆記（手稿 PDF）
+  - 檔名格式：`YYYY-MM-DD_基礎數學_課程筆記_手寫原稿.pdf`
+  - 內容：上課時的原始筆記，包含手寫內容
+  - 提供給學生下載
+
+- **notes/**：整理版筆記（PDF + Markdown）
+  - PDF 檔案：整理過的清晰版筆記（從 Markdown 生成）
+  - Markdown 檔案：筆記原始碼（**不提供下載**，僅供生成 PDF 使用）
+  - 提供給學生的是 PDF，Markdown 是工作檔案
+
+- **homework_solutions/**：作業詳解（PDF + Markdown）
+  - PDF 檔案：作業題目的完整詳解（從 Markdown 生成）
+  - Markdown 檔案：詳解原始碼（**不提供下載**，僅供生成 PDF 使用）
+  - 檔名格式：`作業一詳解.pdf`、`作業二詳解.pdf`
+  - 提供給學生下載 PDF
+
+- **_source/**：工作檔案（不公開）
+  - `template.tex`：PDF 生成模板
+  - `Makefile`：PDF 自動生成腳本
+  - `*.note`：Notability 原檔備份
 
 ## 🎨 技術棧
 
@@ -92,21 +116,24 @@ make pdf DATE=2025-10-02
 make rebuild
 ```
 
-### PDF 檔名格式
+### 工作流程
 
-**輸入檔名**：`class_note/draft/筆記_YYYY-MM-DD_任意描述.md`
+1. **撰寫整理版筆記**
+   - 在 `materials/notes/` 建立 Markdown 檔案
+   - 檔名格式：`YYYY-MM-DD_基礎數學_課程筆記.md`
 
-**輸出檔名**：`class_note/pdf_output/YYYY-MM-DD_基礎數學_課程筆記.pdf`
+2. **生成 PDF**
+   ```bash
+   make rebuild  # 從 Markdown 生成 PDF
+   ```
 
-- ✅ 系統會自動從檔名提取**上課日期**
-- ✅ 課程名稱固定為「**基礎數學**」（在 Makefile 中設定）
-- ✅ 檔名中的描述部分（如 "markdown版"）不影響 PDF 檔名
+3. **上傳上課版筆記**
+   - 將手稿 PDF 直接放入 `materials/lectures/`
+   - 檔名格式：`YYYY-MM-DD_基礎數學_課程筆記_手寫原稿.pdf`
 
-**範例**：
-```
-輸入：筆記_2025-10-02_markdown版.md
-輸出：2025-10-02_基礎數學_課程筆記.pdf
-```
+4. **更新網站**
+   - 編輯 `contents.qmd` 添加下載連結
+   - 格式參考第一週範例
 
 ### PDF 特色
 
@@ -164,17 +191,53 @@ make install-deps
 
 ### 更新課程內容
 
-1. 編輯 `contents.qmd` 新增每週內容
-2. 更新 `index.qmd` 課程進度表
+1. **編輯 `contents.qmd`** - 新增每週詳細內容
+   - 使用 `## 第 N 週（YYYY-MM-DD）` 格式
+   - 詳細列出該週的上課內容
+   - 添加 PDF 下載連結（上課版 + 整理版）
+
+2. **更新 `index.qmd` 課程進度表**
+   - 在課程進度表中添加該週資訊
+   - **上課內容**欄位：使用連結指向 `contents.qmd` 對應週次
+   - **備註**欄位：
+     - 只寫**重要事項**（作業、考試相關）
+     - 使用**純文字**，不要使用連結
+     - 不要寫「課堂筆記」（點上課內容連結即可看到筆記）
+
+   ✅ 正確範例：
+   ```markdown
+   | 2 | 2025/10/09 | [電影欣賞](contents.qmd#第二週2025-10-09) | 公布「課後作業一」 |
+   | 3 | 2025/10/16 | [Ch2 函數（續）](contents.qmd#第三週2025-10-16) | |
+   | 4 | 2025/10/23 | [Ch2 函數的圖形](contents.qmd#第四週2025-10-23) | 「課後作業一」繳交截止，公布詳解 |
+   ```
+
+   ❌ 錯誤範例：
+   ```markdown
+   | 3 | 2025/10/16 | [Ch2 函數（續）](contents.qmd#第三週2025-10-16) | 課堂筆記 |
+   | 4 | 2025/10/23 | [Ch2 函數的圖形](contents.qmd#第四週2025-10-23) | [課堂筆記](contents.qmd#...)、作業截止 |
+   ```
+
 3. 建置網站：`make build`
 4. 部署：`make deploy`
 
 ### 新增課堂筆記
 
-1. 在 `class_note/draft/` 建立 Markdown 筆記
-2. 檔名格式：`筆記_YYYY-MM-DD_描述.md`
-3. 生成 PDF：`make rebuild`
-4. PDF 自動輸出到 `class_note/pdf_output/`
+1. **撰寫 Markdown 筆記**
+   - 在 `materials/notes/` 建立檔案
+   - 檔名：`YYYY-MM-DD_基礎數學_課程筆記.md`
+
+2. **生成整理版 PDF**
+   ```bash
+   make rebuild
+   ```
+
+3. **上傳上課版 PDF**
+   - 將手稿 PDF 放入 `materials/lectures/`
+   - 使用相同檔名格式
+
+4. **更新網站連結**
+   - 編輯 `contents.qmd`
+   - 添加兩個版本的下載連結（參考第一週）
 
 ### 更新作業資訊
 

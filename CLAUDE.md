@@ -50,72 +50,177 @@
 ├── index.qmd                # 首頁（課程大綱、評分方式、課程進度）
 ├── contents.qmd             # 課程內容（每週詳細內容）
 ├── assignments.qmd          # 作業與考試（完整說明）
-├── class_note/              # 課堂筆記系統
-│   ├── draft/               # Markdown 筆記原稿
-│   │   └── 筆記_YYYY-MM-DD_描述.md
-│   ├── pdf_output/          # 生成的 PDF
-│   │   └── YYYY-MM-DD_基礎數學_課程筆記.pdf
-│   ├── template.tex         # LaTeX PDF 模板
-│   └── Makefile             # PDF 自動化
+├── materials/               # 課程資料（公開給學生）
+│   └── lecture_notes/       # 課程筆記系統
+│       ├── lecture_note/    # 上課版筆記（手寫 PDF）
+│       │   └── YYYY-MM-DD_基礎數學_課程筆記_手寫原稿.pdf
+│       ├── lecture_note_organized/  # 整理版筆記
+│       │   ├── YYYY-MM-DD_基礎數學_課程筆記_整理版.md
+│       │   └── YYYY-MM-DD_基礎數學_課程筆記_整理版.pdf
+│       ├── template.tex     # LaTeX PDF 模板
+│       ├── Makefile         # PDF 自動化工具
+│       └── CLAUDE_如何生成整理版筆記.md  # 詳細流程說明
 ├── Makefile                 # 專案主 Makefile
 ├── DESIGN_PRINCIPLES.md     # 設計原則文件
 ├── README.md                # 專案說明
 └── CLAUDE.md                # 本文件
 ```
 
+### 📂 materials/lecture_notes/ 資料夾設計
+
+**按版本分類的資料夾結構**：
+
+- **lecture_note/**：上課版筆記（手寫原稿）
+  - 上課時的原始手寫筆記 PDF（從 Notability 等工具匯出）
+  - 提供給學生下載
+  - 檔名：`YYYY-MM-DD_基礎數學_課程筆記_手寫原稿.pdf`
+
+- **lecture_note_organized/**：整理版筆記
+  - **Markdown 原稿**：整理後的筆記原始碼（**不提供給學生下載**）
+  - **PDF**：從 Markdown 生成的清晰版筆記（提供給學生下載）
+  - 檔名：`YYYY-MM-DD_基礎數學_課程筆記_整理版.{md|pdf}`
+
+- **工作檔案**：
+  - `template.tex`：PDF 生成模板
+  - `Makefile`：自動化腳本
+  - `CLAUDE_如何生成整理版筆記.md`：完整流程說明（含 Mermaid 圖）
+
 ---
 
-## 📝 PDF 筆記系統
+## 📝 課程筆記系統
 
 ### 檔名規則
 
-**Markdown 原稿**（在 `class_note/draft/`）：
+**上課版筆記**（手寫原稿）：
 ```
-筆記_YYYY-MM-DD_任意描述.md
+materials/lecture_notes/lecture_note/YYYY-MM-DD_基礎數學_課程筆記_手寫原稿.pdf
 ```
-- 日期格式必須是 `YYYY-MM-DD`（例如 `2025-10-02`）
-- 描述部分可以是任意文字（例如 "markdown版"、"初稿" 等）
-- 描述**不會**影響 PDF 檔名
 
-**生成的 PDF**（在 `class_note/pdf_output/`）：
+**整理版筆記**：
 ```
-YYYY-MM-DD_基礎數學_課程筆記.pdf
+materials/lecture_notes/lecture_note_organized/YYYY-MM-DD_基礎數學_課程筆記_整理版.md
+materials/lecture_notes/lecture_note_organized/YYYY-MM-DD_基礎數學_課程筆記_整理版.pdf
 ```
-- 日期從原稿檔名自動提取
-- 課程名稱固定為「基礎數學」（在 `class_note/Makefile` 的 `COURSE_NAME` 變數設定）
 
-**範例**：
+**重要說明**：
+- Markdown 檔案**不提供給學生下載**
+- 學生可以下載兩種 PDF：上課版（手寫原稿）和整理版（清晰版）
+- 課程名稱固定為「基礎數學」
+- 整理版檔名必須包含「**_整理版**」後綴
+
+---
+
+## 🤖 使用 Claude Code 生成整理版筆記（重要！）
+
+### 核心流程
+
+當需要為新的上課筆記建立整理版時，**請 Claude Code 使用 Read 工具辨識手寫筆記 PDF**。
+
+**為什麼？**
+- Claude Code 的 Read 工具可以直接讀取 PDF 檔案（包括圖片 PDF）
+- Claude 是多模態 LLM，具備視覺辨識能力，可以「看懂」手寫文字
+- **不需要額外的 OCR 工具**，Claude 會直接辨識並整理內容
+
+### 標準工作流程
+
+**步驟 1：上傳手寫筆記**
+```bash
+# 將手寫筆記 PDF 放入
+materials/lecture_notes/lecture_note/YYYY-MM-DD_基礎數學_課程筆記_手寫原稿.pdf
 ```
-輸入：class_note/draft/筆記_2025-10-02_markdown版.md
-輸出：class_note/pdf_output/2025-10-02_基礎數學_課程筆記.pdf
+
+**步驟 2：請 Claude Code 辨識並生成整理版**
+
+使用以下提示詞：
+
+```
+請幫我處理 YYYY-MM-DD 的課程筆記：
+
+1. 讀取手寫筆記 PDF：
+   materials/lecture_notes/lecture_note/YYYY-MM-DD_基礎數學_課程筆記_手寫原稿.pdf
+
+2. 辨識其中的手寫內容，並整理成清晰的 Markdown 格式
+
+3. 儲存為：
+   materials/lecture_notes/lecture_note_organized/YYYY-MM-DD_基礎數學_課程筆記_整理版.md
+
+請確保：
+- 保留所有數學公式（使用 LaTeX 語法 $...$）
+- 保持清楚的標題層級（#, ##, ###）
+- 整理例題與說明
+- 使用清晰的項目符號和編號
+```
+
+**步驟 3：自動生成 PDF**
+
+Claude Code 會在建立 Markdown 後自動執行：
+```bash
+cd materials/lecture_notes
+make pdf DATE=YYYY-MM-DD
 ```
 
 ### Makefile 邏輯
 
-**課程名稱變數**（`class_note/Makefile:8`）：
+**路徑變數**（`materials/lecture_notes/Makefile`）：
 ```makefile
+ORGANIZED_DIR = lecture_note_organized
+TEMPLATE = template.tex
 COURSE_NAME = 基礎數學
 ```
 
 **檔名轉換邏輯**：
-1. 使用 `sed` 從檔名提取日期：`筆記_([0-9]{4}-[0-9]{2}-[0-9]{2})_.*`
-2. 組合輸出檔名：`${日期}_${COURSE_NAME}_課程筆記.pdf`
-3. 忽略原檔名中的描述部分
+1. 尋找檔案：`lecture_note_organized/*_基礎數學_課程筆記_整理版.md`
+2. 提取日期：使用 `sed` 從檔名提取 `YYYY-MM-DD`
+3. 生成 PDF：輸出到 `lecture_note_organized/YYYY-MM-DD_基礎數學_課程筆記_整理版.pdf`
 
 ### 常用命令
 
 ```bash
-# 在專案根目錄執行（會自動轉發到 class_note/）
-make                    # 生成所有 PDF
-make rebuild            # 清除並重新生成所有 PDF
-make pdf DATE=2025-10-02  # 生成特定日期的 PDF
-make clean              # 清除所有 PDF
-make open               # 開啟 PDF 資料夾
+# 在 materials/lecture_notes/ 目錄執行
+cd materials/lecture_notes
 
-# Quarto 網站相關
-make preview            # 本地預覽網站
-make build              # 建置網站
-make deploy             # 部署到 Posit Connect Cloud
+make                          # 生成所有整理版 PDF
+make pdf DATE=2025-10-16      # 生成特定日期的 PDF（強制更新）
+make rebuild                  # 清除並重新生成所有 PDF
+make clean                    # 清除所有 PDF
+make list                     # 列出所有可轉換的 Markdown 檔案
+make stats                    # 顯示筆記統計資訊
+make open                     # 開啟整理版資料夾
+
+# Quarto 網站相關（在專案根目錄執行）
+make preview                  # 本地預覽網站
+make build                    # 建置網站
+make deploy                   # 部署到 Posit Connect Cloud
+```
+
+### 整理版 Markdown 格式範例
+
+```markdown
+# 基礎數學課程筆記
+
+**日期**：2025-10-16
+**主題**：Ch2 函數（續）
+
+---
+
+## 📚 本週主題
+
+1. 完全平方公式
+2. 合併同類項
+
+---
+
+## 📖 詳細內容
+
+### 1. 完全平方公式
+
+$(a+b)^2 = a^2 + 2ab + b^2$
+
+**例題**：
+
+$(x+2)^2 = x^2 + 4x + 4$
+
+...
 ```
 
 ---
@@ -156,8 +261,11 @@ navbar:
 ```markdown
 #### 📥 課堂筆記下載
 
-**PDF 下載**：[2025-10-02_基礎數學_課程筆記.pdf](class_note/pdf_output/2025-10-02_基礎數學_課程筆記.pdf)
+- **手寫原稿**：[2025-10-02_基礎數學_課程筆記_手寫原稿.pdf](materials/lecture_notes/lecture_note/2025-10-02_基礎數學_課程筆記_手寫原稿.pdf)
+- **整理版**：[2025-10-02_基礎數學_課程筆記_整理版.pdf](materials/lecture_notes/lecture_note_organized/2025-10-02_基礎數學_課程筆記_整理版.pdf)
 ```
+
+**注意**：不提供 Markdown 檔案下載連結
 
 #### assignments.qmd（作業與考試）
 包含：
@@ -171,47 +279,75 @@ navbar:
 
 ### 新增一週的課程內容
 
-1. **撰寫課堂筆記 Markdown**
-   ```bash
-   # 在 class_note/draft/ 建立新檔案
-   # 檔名：筆記_2025-10-16_描述.md
+1. **上傳手寫筆記 PDF**
+   - 將手寫筆記 PDF 放入 `materials/lecture_notes/lecture_note/`
+   - 檔名：`2025-10-16_基礎數學_課程筆記_手寫原稿.pdf`
+
+2. **請 Claude Code 辨識並生成整理版**
+   ```
+   請幫我處理 2025-10-16 的課程筆記：
+
+   1. 讀取手寫筆記 PDF：
+      materials/lecture_notes/lecture_note/2025-10-16_基礎數學_課程筆記_手寫原稿.pdf
+
+   2. 辨識並整理成 Markdown 格式
+
+   3. 儲存為：
+      materials/lecture_notes/lecture_note_organized/2025-10-16_基礎數學_課程筆記_整理版.md
+
+   4. 執行 make 生成 PDF
    ```
 
-2. **生成 PDF**
-   ```bash
-   cd class_note
-   make rebuild
-   # 或使用：make pdf DATE=2025-10-16
-   ```
+3. **檢閱生成的內容**
+   - 確認 Markdown 內容正確（特別是數學公式）
+   - 確認 PDF 格式正確
 
-3. **更新 contents.qmd**
+4. **更新 contents.qmd**
    ```markdown
    ### 第三週（2025-10-16）
 
-   **主題：課程主題**
+   **主題：Ch2 函數（續）- 乘法公式與合併同類項**
 
-   - 重點 1
-   - 重點 2
+   - 完全平方公式
+   - 合併同類項
 
    ---
 
    #### 📥 課堂筆記下載
 
-   **PDF 下載**：[2025-10-16_基礎數學_課程筆記.pdf](class_note/pdf_output/2025-10-16_基礎數學_課程筆記.pdf)
+   - **手寫原稿**：[2025-10-16_基礎數學_課程筆記_手寫原稿.pdf](materials/lecture_notes/lecture_note/2025-10-16_基礎數學_課程筆記_手寫原稿.pdf)
+   - **整理版**：[2025-10-16_基礎數學_課程筆記_整理版.pdf](materials/lecture_notes/lecture_note_organized/2025-10-16_基礎數學_課程筆記_整理版.pdf)
    ```
 
-4. **更新 index.qmd 課程進度表**
+5. **更新 index.qmd 課程進度表**
+
+   ⚠️ **重要規則**：
+   - **上課內容**欄位：使用連結
+   - **備註**欄位：
+     - 只寫重要事項（作業、考試相關）
+     - 使用純文字，不要使用連結
+     - 不要寫「課堂筆記」（點上課內容連結即可看到筆記）
+
+   ✅ 正確範例：
    ```markdown
-   | 3 | 2025/10/16 | 課程主題 | [課堂筆記](contents.qmd#第三週2025-10-16) |
+   | 2 | 2025/10/09 | [電影欣賞](contents.qmd#第二週2025-10-09) | 公布「課後作業一」 |
+   | 3 | 2025/10/16 | [Ch2 函數（續）](contents.qmd#第三週2025-10-16) | |
+   | 4 | 2025/10/23 | [Ch2 函數的圖形](contents.qmd#第四週2025-10-23) | 「課後作業一」繳交截止，公布詳解 |
    ```
 
-5. **預覽網站**
+   ❌ 錯誤範例：
+   ```markdown
+   | 3 | 2025/10/16 | [Ch2 函數（續）](contents.qmd#第三週2025-10-16) | 課堂筆記 |
+   | 4 | 2025/10/23 | [Ch2 函數的圖形](contents.qmd#第四週2025-10-23) | [課堂筆記](contents.qmd#...)、作業截止 |
+   ```
+
+6. **預覽網站**
    ```bash
    make preview
    # 瀏覽器開啟 http://localhost:4200
    ```
 
-6. **建置並部署**
+7. **建置並部署**
    ```bash
    make build
    make deploy
@@ -236,6 +372,56 @@ navbar:
    | 4 | 2025/10/23 | 課程主題 | 公布「課後作業二（截止時間 2025/11/06 19:14）」 |
    ```
 
+### 更新 Changelog
+
+**重要**：每次有重要更新時，必須同時更新兩個地方：
+
+1. **更新 changelog.qmd（完整紀錄）**
+   - 按時間順序新增更新條目
+   - 使用適當的 callout 類型區分更新類別
+   - 包含所有相關連結
+
+2. **更新 index.qmd「最近更新」區塊**
+   - 只保留最近 3-5 則重要更新
+   - 移除較舊的更新（但保留在 changelog.qmd）
+   - 確保與 changelog.qmd 內容一致
+
+**更新類別與 Callout 類型**：
+
+| 更新類別 | Callout 類型 | Emoji | 使用時機 |
+|---------|-------------|-------|---------|
+| 考試資訊 | `callout-important` | 🎯 | 期中考、期末考相關公告 |
+| 作業更新 | `callout-warning` | 📝 | 作業開放、截止、詳解發布 |
+| 教材更新 | `callout-note` | 📚 | 課程筆記、講義、補充資料 |
+| 重要公告 | `callout-caution` | 📢 | 課程政策、特殊安排 |
+| 網站功能 | `callout-tip` | ✨ | 網站改版、新功能上線 |
+
+**Changelog 範例**：
+
+```markdown
+### 2025/11/20 {.changelog-date}
+
+::: callout-important
+## 🎯 考試資訊
+
+**期中考加分辦法公布**
+
+- ✅ **方法一：期中考訂正**（+10 分）
+  - 截止時間：2025/12/06 23:59
+  - 繳交方式：TronClass「期中考訂正」作業區
+- ✅ **方法二：期中考補考**
+  - 申請方式：寄信至 statisticalearning123@gmail.com
+:::
+```
+
+**注意事項**：
+
+- ✅ 日期格式：`YYYY/MM/DD`
+- ✅ 標題使用 `{.changelog-date}` CSS 類別
+- ✅ 所有 bullet list 前必須空一行（Quarto 規則）
+- ✅ 包含相關頁面的連結，方便學生查看詳情
+- ✅ 使用清晰簡潔的語言
+
 ---
 
 ## ⚠️ 重要注意事項
@@ -256,7 +442,8 @@ navbar:
 
 - ✅ 課程名稱固定為「基礎數學」
 - ✅ 從檔名自動提取日期
-- ✅ 格式：`YYYY-MM-DD_基礎數學_課程筆記.pdf`
+- ✅ 手寫原稿格式：`YYYY-MM-DD_基礎數學_課程筆記_手寫原稿.pdf`
+- ✅ 整理版格式：`YYYY-MM-DD_基礎數學_課程筆記_整理版.pdf`
 - ❌ 不從檔名提取課程主題（如 "markdown版"）
 
 ### 設計原則
@@ -264,6 +451,50 @@ navbar:
 - ✅ 網站提供**完整詳細的說明**
 - ✅ 明確標示「📝 請至 TronClass 繳交」
 - ❌ 絕不只寫「請至 TronClass 查看」
+
+### Quarto Markdown 格式規範
+
+- ✅ **Bullet point 前必須空一行**，否則會渲染失敗
+- ✅ **正確格式**：
+  ```markdown
+  **考試卷**：
+
+  - 期中考試卷.pdf
+  - 期中考答案卷.pdf
+  ```
+- ❌ **錯誤格式**（會渲染成連續文字）：
+  ```markdown
+  **考試卷**：
+  - 期中考試卷.pdf
+  - 期中考答案卷.pdf
+  ```
+
+**常見錯誤範例**：
+
+```markdown
+# ❌ 錯誤：bullet point 前沒有空行
+詳細解答（2025/11/16 公布）：
+- 期中考詳解.pdf
+
+內容包含：
+- ✅ 第一部分：10 道選擇題完整解答
+- ✅ 第二部分：2 道計算題詳細步驟
+
+# ✅ 正確：bullet point 前空一行
+詳細解答（2025/11/16 公布）：
+
+- 期中考詳解.pdf
+
+內容包含：
+
+- ✅ 第一部分：10 道選擇題完整解答
+- ✅ 第二部分：2 道計算題詳細步驟
+```
+
+**重要提醒**：
+- 在編輯 `.qmd` 檔案時，所有 bullet list 前都必須空一行
+- 適用於所有層級的標題後接 bullet list 的情況
+- 這是 Quarto 的 Markdown 解析規則，必須嚴格遵守
 
 ---
 
@@ -287,20 +518,20 @@ quarto render               # 建置網站到 _site/
 ### Makefile 命令總覽
 
 ```bash
-# PDF 相關（自動轉發到 class_note/）
-make                        # 生成所有 PDF
-make rebuild                # 重新生成所有 PDF
-make clean                  # 清除 PDF
-make open                   # 開啟 PDF 資料夾
+# 課程筆記 PDF（在 materials/lecture_notes/ 執行）
+cd materials/lecture_notes
+make                          # 生成所有整理版 PDF
+make pdf DATE=2025-10-16      # 生成特定日期的 PDF（強制更新）
+make rebuild                  # 重新生成所有 PDF
+make clean                    # 清除所有整理版 PDF
+make list                     # 列出所有可轉換的 Markdown 檔案
+make stats                    # 顯示筆記統計資訊
+make open                     # 開啟整理版資料夾
 
-# 網站相關
-make preview                # 預覽網站
-make build                  # 建置網站
-make deploy                 # 部署網站
-
-# 綜合
-make build-all              # 建置 PDF + 網站
-make clean-all              # 清除所有生成檔案
+# 網站相關（在專案根目錄執行）
+make preview                  # 預覽網站
+make build                    # 建置網站
+make deploy                   # 部署網站
 ```
 
 ---
@@ -309,10 +540,11 @@ make clean-all              # 清除所有生成檔案
 
 - [README.md](README.md) - 專案完整說明
 - [DESIGN_PRINCIPLES.md](DESIGN_PRINCIPLES.md) - 設計原則
-- [class_note/Makefile](class_note/Makefile) - PDF 生成邏輯
+- [materials/lecture_notes/Makefile](materials/lecture_notes/Makefile) - 課程筆記 PDF 生成邏輯
+- [materials/lecture_notes/CLAUDE_如何生成整理版筆記.md](materials/lecture_notes/CLAUDE_如何生成整理版筆記.md) - 詳細流程說明（含 Mermaid 圖）
 - [_quarto.yml](_quarto.yml) - 網站配置
 
 ---
 
-**最後更新**：2025-10-11
+**最後更新**：2025-10-30
 **維護者**：鄭澈
