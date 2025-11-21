@@ -26,6 +26,7 @@ website:
           - index.qmd
           - contents.qmd
           - assignments.qmd
+          - changelog.qmd
 
   page-footer:
     left: "© 2025 龍華科技大學 基礎數學"
