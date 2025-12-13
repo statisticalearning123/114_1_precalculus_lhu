@@ -1,0 +1,4 @@
+- source: project
+  posit-cloud:
+    - id: 019a3779-73df-842f-4ad5-08bface4fc76
+      url: 'https://019a3779-73df-842f-4ad5-08bface4fc76.share.connect.posit.cloud'
