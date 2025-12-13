@@ -47,7 +47,7 @@ format:
     link-external-newwindow: true
     smooth-scroll: true
     code-copy: true
-    lang: zh
+    lang: zh-TW
 
 execute:
   freeze: auto
