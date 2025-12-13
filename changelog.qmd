@@ -13,6 +13,39 @@ title: "📋 更新紀錄"
 
 ## 2025 年 12 月
 
+### 2025/12/13 {.changelog-date}
+
+::: callout-note
+## 📚 教材更新
+
+**第十一週課程筆記上線**
+
+- 主題：Ch3 函數的極限 (2) - 極限的計算與左右極限
+- 📥 [手寫原稿](materials/lecture_notes/lecture_note/2025-12-11_基礎數學_課程筆記_手寫原稿.pdf)
+- 📥 [整理版](materials/lecture_notes/lecture_note_organized/2025-12-11_基礎數學_課程筆記_整理版.pdf)
+- 內容包含：
+  - 極限的直接代入法
+  - 不定型 0/0 的處理：因式分解法
+  - 左極限與右極限
+  - 階梯函數（Step Function）
+  - 極限存在的條件
+:::
+
+::: callout-warning
+## 📝 作業更新
+
+**作業二詳解發布**
+
+- 📥 [作業二詳解.pdf](materials/homework_solutions/hw02/作業二詳解.pdf)
+- 內容包含：
+  - 10 道題目完整解答（5 單選 + 5 是非）
+  - 每題詳細解題步驟與說明
+  - 常見錯誤提醒
+  - 學習重點總整理
+:::
+
+---
+
 ### 2025/12/03 {.changelog-date}
 
 ::: callout-note
