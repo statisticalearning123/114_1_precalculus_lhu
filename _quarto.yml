@@ -13,9 +13,11 @@ website:
     left:
       - text: "📅 課程內容"
         href: contents.qmd
-      - text: "📝 作業與考試"
+      - text: "📝 課後作業"
         href: assignments.qmd
-      - text: "📋 更新紀錄"
+      - text: "📋 考試資訊"
+        href: exams.qmd
+      - text: "📜 更新紀錄"
         href: changelog.qmd
 
   sidebar:
@@ -26,6 +28,7 @@ website:
           - index.qmd
           - contents.qmd
           - assignments.qmd
+          - exams.qmd
           - changelog.qmd
 
   page-footer:
